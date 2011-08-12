@@ -1227,10 +1227,10 @@
 		<string>PrimaryDocumentVisibleCharacterRange</string>
 		<string>HideAllIssues</string>
 		<string>PrimaryDocumentSelectedCharacterRange</string>
-		<real>334817056.18070102</real>
-		<string>{0, 967}</string>
+		<real>334818213.39450699</real>
+		<string>{0, 1367}</string>
 		<false/>
-		<string>{735, 0}</string>
+		<string>{1134, 0}</string>
 		<string>-applicationDidFinishLaunching:</string>
 		<string>Xcode.IDEKit.EditorDocument.SourceCode</string>
 		<dict>
@@ -3327,9 +3327,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>334817056.181427</real>
-		<string>{0, 967}</string>
-		<string>{735, 0}</string>
+		<real>334818213.394903</real>
+		<string>{0, 1367}</string>
+		<string>{1134, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -4235,7 +4235,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>121</integer>
+					<integer>25</integer>
 				</dict>
 			</array>
 		</dict>
@@ -5033,10 +5033,10 @@
 				</dict>
 			</array>
 		</dict>
-		<real>334817056.182199</real>
-		<string>{0, 999}</string>
-		<string>{205, 0}</string>
-		<string>TODO: (ns): throw exceptions within functions if fn == nil</string>
+		<real>334818213.39540702</real>
+		<string>{220, 956}</string>
+		<string>{937, 0}</string>
+		<string>-foldl:fn:</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -5069,7 +5069,7 @@
 				</dict>
 			</array>
 		</dict>
-		<string>{{0, 0}, {1415, 1102}}</string>
+		<string>{{0, 0}, {1415, 749}}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -5687,7 +5687,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>162</real>
+		<real>170</real>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -5717,7 +5717,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>978</real>
+		<real>1245</real>
 		<string>Xcode3TargetEditor</string>
 		<dict>
 			<key>$class</key>
@@ -5756,7 +5756,7 @@
 			</dict>
 		</dict>
 		<string>file://localhost/Users/nsantorello/github/nsarray-extensions/NSArrayExtensions/NSArrayExtensions.xcodeproj/</string>
-		<real>334807437.84941</real>
+		<real>334817250.88421798</real>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -6064,9 +6064,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>334817056.17992002</real>
-		<string>{0, 999}</string>
-		<string>{205, 0}</string>
+		<real>334818213.39401197</real>
+		<string>{220, 956}</string>
+		<string>{937, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -6160,9 +6160,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>334816784.63085198</real>
-		<string>{0, 317}</string>
-		<string>{257, 2}</string>
+		<real>334818141.22848898</real>
+		<string>{0, 458}</string>
+		<string>{300, 9}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -6208,9 +6208,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>334817056.17974198</real>
-		<string>{0, 967}</string>
-		<string>{735, 0}</string>
+		<real>334818213.393879</real>
+		<string>{0, 1367}</string>
+		<string>{1134, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -6395,7 +6395,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>475</integer>
+					<integer>418</integer>
 				</dict>
 			</array>
 		</dict>
@@ -6659,7 +6659,7 @@
 				<integer>492</integer>
 			</dict>
 			<key>NS.time</key>
-			<real>334816388.65532899</real>
+			<real>334818091.71658301</real>
 		</dict>
 		<dict>
 			<key>$classes</key>
@@ -6670,7 +6670,7 @@
 			<key>$classname</key>
 			<string>NSDate</string>
 		</dict>
-		<string>Today at 12:33 AM</string>
+		<string>Today at 1:01 AM</string>
 		<integer>106</integer>
 		<dict>
 			<key>$class</key>
@@ -6712,15 +6712,15 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>505</integer>
+					<integer>504</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>507</integer>
+					<integer>506</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>509</integer>
+					<integer>508</integer>
 				</dict>
 			</array>
 		</dict>
@@ -6792,7 +6792,24 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>504</integer>
+				<integer>412</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>$class</key>
+			<dict>
+				<key>CF$UID</key>
+				<integer>127</integer>
+			</dict>
+			<key>NS.base</key>
+			<dict>
+				<key>CF$UID</key>
+				<integer>0</integer>
+			</dict>
+			<key>NS.relative</key>
+			<dict>
+				<key>CF$UID</key>
+				<integer>505</integer>
 			</dict>
 		</dict>
 		<string>file://localhost/Users/nsantorello/github/nsarray-extensions/NSArrayExtensions/NSArrayExtensions/NSArrayExtensionsAppDelegate.h</string>
@@ -6810,7 +6827,7 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>506</integer>
+				<integer>507</integer>
 			</dict>
 		</dict>
 		<string>file://localhost/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSArray.h</string>
@@ -6828,27 +6845,10 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>508</integer>
+				<integer>509</integer>
 			</dict>
 		</dict>
 		<string>file://localhost/Users/nsantorello/github/nsarray-extensions/NSArrayExtensions/NSArrayExtensions/en.lproj/MainMenu.xib</string>
-		<dict>
-			<key>$class</key>
-			<dict>
-				<key>CF$UID</key>
-				<integer>127</integer>
-			</dict>
-			<key>NS.base</key>
-			<dict>
-				<key>CF$UID</key>
-				<integer>0</integer>
-			</dict>
-			<key>NS.relative</key>
-			<dict>
-				<key>CF$UID</key>
-				<integer>412</integer>
-			</dict>
-		</dict>
 		<dict>
 			<key>$class</key>
 			<dict>

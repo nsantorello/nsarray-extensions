@@ -25,23 +25,42 @@
 
 -(BOOL)contains:(BOOL(^)(id obj))fn
 {
-    __block BOOL contains = NO;
+    return [self count:fn] > 0;
+}
+
+-(NSInteger)count:(BOOL(^)(id obj))fn
+{
+    __block int count = 0;
     
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        *stop = contains = contains || fn(obj);
+        if (fn(obj))
+        {
+            count++;
+        }
     }];
     
-    return contains;
+    return count;
 }
 
 -(id)foldl:(id) acc fn:(id(^)(id acc, id obj))fn
 {
+    // TODO: (ns): there is probably a memory leak in this function.
     __block id blockAcc = acc;
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         blockAcc = [fn(blockAcc, obj) retain];
     }];
     
     return [blockAcc autorelease];
+}
+
+-(BOOL)none:(BOOL(^)(id obj))fn
+{
+    return [self count:fn] == 0;
+}
+
+-(BOOL)one:(BOOL(^)(id obj))fn
+{
+    return [self count:fn] == 1;
 }
 
 @end

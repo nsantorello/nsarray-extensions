@@ -18,12 +18,22 @@
     // Insert code here to initialize your application
     NSArray* array = [NSArray arrayWithObjects:[NSNumber numberWithInt:1],
                       [NSNumber numberWithInt:2],
+                      [NSNumber numberWithInt:2],
                       [NSNumber numberWithInt:3],
                       nil];
-    BOOL val = [array all:^BOOL(id obj) {
+    BOOL all = [array all:^BOOL(id obj) {
         return [((NSNumber*)obj) intValue] > 0;
     }];
-    NSNumber* num = [array foldl:[NSNumber numberWithInt:0] fn:^id(id acc, id obj) {
+    BOOL contains = [array contains:^BOOL(id obj) { // check to see if "array" contains "2"
+        return [((NSNumber*)obj) intValue] == 4;
+    }];
+    BOOL none = [array none:^BOOL(id obj) {
+        return [((NSNumber*)obj) intValue] == 3;
+    }];
+    BOOL one = [array one:^BOOL(id obj) {
+        return [((NSNumber*)obj) intValue] == 1;
+    }];
+    NSNumber* foldl = [array foldl:[NSNumber numberWithInt:0] fn:^id(id acc, id obj) {
         return [NSNumber numberWithInt:([((NSNumber*)acc) intValue] + [((NSNumber*)obj) intValue] * [((NSNumber*)obj) intValue])];
     }];
 }
