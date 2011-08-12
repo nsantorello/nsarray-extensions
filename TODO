@@ -14,7 +14,6 @@ entries
 find   
 find_all   
 find_index   
-first   
 flat_map   
 grep   
 group_by   

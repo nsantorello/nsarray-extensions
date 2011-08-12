@@ -1,4 +1,5 @@
 // TODO: (ns): throw exceptions within functions if fn == nil
+// TODO: (ns): make sure my library doesn't throw exceptions for weird array or fn input
 
 #import "NSArray+Extensions.h"
 
@@ -51,6 +52,11 @@
 -(NSArray*)findAll:(BOOL(^)(id obj))fn
 {
     return [[self filter:fn] autorelease];
+}
+
+-(id)first
+{
+    return [self count] == 0 ? nil : [self objectAtIndex:0];
 }
 
 -(id)foldl:(id) acc fn:(id(^)(id acc, id obj))fn
