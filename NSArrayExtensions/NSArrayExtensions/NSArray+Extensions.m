@@ -42,6 +42,25 @@
     return count;
 }
 
+-(NSArray*)filter:(BOOL(^)(id obj))fn
+{
+    __block NSMutableArray* filtered = [[NSMutableArray alloc] init];
+    
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (fn(obj))
+        {
+            [filtered addObject:obj];
+        }
+    }];
+    
+    return filtered;
+}
+
+-(NSArray*)findAll:(BOOL(^)(id obj))fn
+{
+    return [[self filter:fn] autorelease];
+}
+
 -(id)foldl:(id) acc fn:(id(^)(id acc, id obj))fn
 {
     // TODO: (ns): there is probably a memory leak in this function.
@@ -61,6 +80,11 @@
 -(BOOL)one:(BOOL(^)(id obj))fn
 {
     return [self count:fn] == 1;
+}
+
+-(NSArray*)select:(BOOL(^)(id obj))fn
+{
+    return [[self filter:fn] autorelease];
 }
 
 @end
