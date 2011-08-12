@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D224A42B13F4C185001416A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D224A42A13F4C185001416A4 /* Cocoa.framework */; };
+		D224A43513F4C185001416A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D224A43313F4C185001416A4 /* InfoPlist.strings */; };
+		D224A43813F4C185001416A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D224A43713F4C185001416A4 /* main.m */; };
+		D224A43B13F4C185001416A4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D224A43913F4C185001416A4 /* Credits.rtf */; };
+		D224A43E13F4C185001416A4 /* NSArrayExtensionsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D224A43D13F4C185001416A4 /* NSArrayExtensionsAppDelegate.m */; };
+		D224A44113F4C185001416A4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D224A43F13F4C185001416A4 /* MainMenu.xib */; };
+		D224A44813F4C185001416A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D224A42A13F4C185001416A4 /* Cocoa.framework */; };
+		D224A45013F4C185001416A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D224A44E13F4C185001416A4 /* InfoPlist.strings */; };
+		D224A45313F4C185001416A4 /* NSArrayExtensionsTests.h in Resources */ = {isa = PBXBuildFile; fileRef = D224A45213F4C185001416A4 /* NSArrayExtensionsTests.h */; };
+		D224A45513F4C185001416A4 /* NSArrayExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D224A45413F4C185001416A4 /* NSArrayExtensionsTests.m */; };
+		D224A46013F4C1CB001416A4 /* NSArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D224A45F13F4C1CB001416A4 /* NSArray+Extensions.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D224A44913F4C185001416A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D224A41D13F4C185001416A4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D224A42513F4C185001416A4;
+			remoteInfo = NSArrayExtensions;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D224A42613F4C185001416A4 /* NSArrayExtensions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSArrayExtensions.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D224A42A13F4C185001416A4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D224A42D13F4C185001416A4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		D224A42E13F4C185001416A4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D224A42F13F4C185001416A4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D224A43213F4C185001416A4 /* NSArrayExtensions-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NSArrayExtensions-Info.plist"; sourceTree = "<group>"; };
+		D224A43413F4C185001416A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D224A43613F4C185001416A4 /* NSArrayExtensions-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArrayExtensions-Prefix.pch"; sourceTree = "<group>"; };
+		D224A43713F4C185001416A4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D224A43A13F4C185001416A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		D224A43C13F4C185001416A4 /* NSArrayExtensionsAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSArrayExtensionsAppDelegate.h; sourceTree = "<group>"; };
+		D224A43D13F4C185001416A4 /* NSArrayExtensionsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSArrayExtensionsAppDelegate.m; sourceTree = "<group>"; };
+		D224A44013F4C185001416A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D224A44713F4C185001416A4 /* NSArrayExtensionsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NSArrayExtensionsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D224A44D13F4C185001416A4 /* NSArrayExtensionsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NSArrayExtensionsTests-Info.plist"; sourceTree = "<group>"; };
+		D224A44F13F4C185001416A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D224A45113F4C185001416A4 /* NSArrayExtensionsTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArrayExtensionsTests-Prefix.pch"; sourceTree = "<group>"; };
+		D224A45213F4C185001416A4 /* NSArrayExtensionsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSArrayExtensionsTests.h; sourceTree = "<group>"; };
+		D224A45413F4C185001416A4 /* NSArrayExtensionsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSArrayExtensionsTests.m; sourceTree = "<group>"; };
+		D224A45E13F4C1CB001416A4 /* NSArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extensions.h"; sourceTree = "<group>"; };
+		D224A45F13F4C1CB001416A4 /* NSArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extensions.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D224A42313F4C185001416A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D224A42B13F4C185001416A4 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D224A44313F4C185001416A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D224A44813F4C185001416A4 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D224A41B13F4C185001416A4 = {
+			isa = PBXGroup;
+			children = (
+				D224A43013F4C185001416A4 /* NSArrayExtensions */,
+				D224A44B13F4C185001416A4 /* NSArrayExtensionsTests */,
+				D224A42913F4C185001416A4 /* Frameworks */,
+				D224A42713F4C185001416A4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D224A42713F4C185001416A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D224A42613F4C185001416A4 /* NSArrayExtensions.app */,
+				D224A44713F4C185001416A4 /* NSArrayExtensionsTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D224A42913F4C185001416A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D224A42A13F4C185001416A4 /* Cocoa.framework */,
+				D224A42C13F4C185001416A4 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D224A42C13F4C185001416A4 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D224A42D13F4C185001416A4 /* AppKit.framework */,
+				D224A42E13F4C185001416A4 /* CoreData.framework */,
+				D224A42F13F4C185001416A4 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		D224A43013F4C185001416A4 /* NSArrayExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				D224A43C13F4C185001416A4 /* NSArrayExtensionsAppDelegate.h */,
+				D224A43D13F4C185001416A4 /* NSArrayExtensionsAppDelegate.m */,
+				D224A43F13F4C185001416A4 /* MainMenu.xib */,
+				D224A43113F4C185001416A4 /* Supporting Files */,
+				D224A45E13F4C1CB001416A4 /* NSArray+Extensions.h */,
+				D224A45F13F4C1CB001416A4 /* NSArray+Extensions.m */,
+			);
+			path = NSArrayExtensions;
+			sourceTree = "<group>";
+		};
+		D224A43113F4C185001416A4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D224A43213F4C185001416A4 /* NSArrayExtensions-Info.plist */,
+				D224A43313F4C185001416A4 /* InfoPlist.strings */,
+				D224A43613F4C185001416A4 /* NSArrayExtensions-Prefix.pch */,
+				D224A43713F4C185001416A4 /* main.m */,
+				D224A43913F4C185001416A4 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D224A44B13F4C185001416A4 /* NSArrayExtensionsTests */ = {
+			isa = PBXGroup;
+			children = (
+				D224A45213F4C185001416A4 /* NSArrayExtensionsTests.h */,
+				D224A45413F4C185001416A4 /* NSArrayExtensionsTests.m */,
+				D224A44C13F4C185001416A4 /* Supporting Files */,
+			);
+			path = NSArrayExtensionsTests;
+			sourceTree = "<group>";
+		};
+		D224A44C13F4C185001416A4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D224A44D13F4C185001416A4 /* NSArrayExtensionsTests-Info.plist */,
+				D224A44E13F4C185001416A4 /* InfoPlist.strings */,
+				D224A45113F4C185001416A4 /* NSArrayExtensionsTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D224A42513F4C185001416A4 /* NSArrayExtensions */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D224A45813F4C185001416A4 /* Build configuration list for PBXNativeTarget "NSArrayExtensions" */;
+			buildPhases = (
+				D224A42213F4C185001416A4 /* Sources */,
+				D224A42313F4C185001416A4 /* Frameworks */,
+				D224A42413F4C185001416A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NSArrayExtensions;
+			productName = NSArrayExtensions;
+			productReference = D224A42613F4C185001416A4 /* NSArrayExtensions.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D224A44613F4C185001416A4 /* NSArrayExtensionsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D224A45B13F4C185001416A4 /* Build configuration list for PBXNativeTarget "NSArrayExtensionsTests" */;
+			buildPhases = (
+				D224A44213F4C185001416A4 /* Sources */,
+				D224A44313F4C185001416A4 /* Frameworks */,
+				D224A44413F4C185001416A4 /* Resources */,
+				D224A44513F4C185001416A4 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D224A44A13F4C185001416A4 /* PBXTargetDependency */,
+			);
+			name = NSArrayExtensionsTests;
+			productName = NSArrayExtensionsTests;
+			productReference = D224A44713F4C185001416A4 /* NSArrayExtensionsTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D224A41D13F4C185001416A4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Noah Santorello";
+			};
+			buildConfigurationList = D224A42013F4C185001416A4 /* Build configuration list for PBXProject "NSArrayExtensions" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D224A41B13F4C185001416A4;
+			productRefGroup = D224A42713F4C185001416A4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D224A42513F4C185001416A4 /* NSArrayExtensions */,
+				D224A44613F4C185001416A4 /* NSArrayExtensionsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D224A42413F4C185001416A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D224A43513F4C185001416A4 /* InfoPlist.strings in Resources */,
+				D224A43B13F4C185001416A4 /* Credits.rtf in Resources */,
+				D224A44113F4C185001416A4 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D224A44413F4C185001416A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D224A45013F4C185001416A4 /* InfoPlist.strings in Resources */,
+				D224A45313F4C185001416A4 /* NSArrayExtensionsTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D224A44513F4C185001416A4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D224A42213F4C185001416A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D224A43813F4C185001416A4 /* main.m in Sources */,
+				D224A43E13F4C185001416A4 /* NSArrayExtensionsAppDelegate.m in Sources */,
+				D224A46013F4C1CB001416A4 /* NSArray+Extensions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D224A44213F4C185001416A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D224A45513F4C185001416A4 /* NSArrayExtensionsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D224A44A13F4C185001416A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D224A42513F4C185001416A4 /* NSArrayExtensions */;
+			targetProxy = D224A44913F4C185001416A4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D224A43313F4C185001416A4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D224A43413F4C185001416A4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D224A43913F4C185001416A4 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D224A43A13F4C185001416A4 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		D224A43F13F4C185001416A4 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D224A44013F4C185001416A4 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		D224A44E13F4C185001416A4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D224A44F13F4C185001416A4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D224A45613F4C185001416A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D224A45713F4C185001416A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D224A45913F4C185001416A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NSArrayExtensions/NSArrayExtensions-Prefix.pch";
+				INFOPLIST_FILE = "NSArrayExtensions/NSArrayExtensions-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D224A45A13F4C185001416A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NSArrayExtensions/NSArrayExtensions-Prefix.pch";
+				INFOPLIST_FILE = "NSArrayExtensions/NSArrayExtensions-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D224A45C13F4C185001416A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NSArrayExtensions.app/Contents/MacOS/NSArrayExtensions";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NSArrayExtensionsTests/NSArrayExtensionsTests-Prefix.pch";
+				INFOPLIST_FILE = "NSArrayExtensionsTests/NSArrayExtensionsTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D224A45D13F4C185001416A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NSArrayExtensions.app/Contents/MacOS/NSArrayExtensions";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NSArrayExtensionsTests/NSArrayExtensionsTests-Prefix.pch";
+				INFOPLIST_FILE = "NSArrayExtensionsTests/NSArrayExtensionsTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D224A42013F4C185001416A4 /* Build configuration list for PBXProject "NSArrayExtensions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D224A45613F4C185001416A4 /* Debug */,
+				D224A45713F4C185001416A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D224A45813F4C185001416A4 /* Build configuration list for PBXNativeTarget "NSArrayExtensions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D224A45913F4C185001416A4 /* Debug */,
+				D224A45A13F4C185001416A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D224A45B13F4C185001416A4 /* Build configuration list for PBXNativeTarget "NSArrayExtensionsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D224A45C13F4C185001416A4 /* Debug */,
+				D224A45D13F4C185001416A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D224A41D13F4C185001416A4 /* Project object */;
+}
