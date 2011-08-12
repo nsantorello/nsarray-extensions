@@ -53,7 +53,7 @@
         }
     }];
     
-    return filtered;
+    return [filtered autorelease];
 }
 
 -(NSArray*)findAll:(BOOL(^)(id obj))fn
