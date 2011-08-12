@@ -1,0 +1,1 @@
+This is small category that adds Ruby-style collection operations to NSArray.  These functions are intended for convenience and have not been optimized for operating on very large collections.
