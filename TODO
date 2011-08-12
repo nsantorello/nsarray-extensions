@@ -14,7 +14,6 @@ each_slice
 each_with_index   
 each_with_object   
 entries   
-find_index   
 flat_map   
 grep   
 group_by   

@@ -45,6 +45,9 @@
     NSArray* find = [array find:^BOOL(id obj) {
         return [((NSNumber*)obj) intValue] == 0;
     }];
+    NSInteger findIndex = [array findIndex:^BOOL(id obj) {
+        return [((NSNumber*)obj) intValue] == 3;
+    }];
 }
 
 @end

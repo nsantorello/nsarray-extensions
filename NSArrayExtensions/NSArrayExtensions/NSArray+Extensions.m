@@ -40,9 +40,9 @@
     return [self count:fn] > 0;
 }
 
--(NSInteger)count:(BOOL(^)(id obj))fn
+-(NSUInteger)count:(BOOL(^)(id obj))fn
 {
-    __block int count = 0;
+    __block NSUInteger count = 0;
     
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         if (fn(obj))
@@ -68,6 +68,21 @@
 -(NSArray*)findAll:(BOOL(^)(id obj))fn
 {
     return [[self filter:fn] autorelease];
+}
+
+-(NSInteger)findIndex:(BOOL(^)(id obj))fn
+{
+    __block NSUInteger index = -1;
+    
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (fn(obj))
+        {
+            index = idx;
+            *stop = YES;
+        }
+    }];
+    
+    return index;
 }
 
 -(id)first
