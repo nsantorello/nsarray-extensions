@@ -7,152 +7,152 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D224A42B13F4C185001416A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D224A42A13F4C185001416A4 /* Cocoa.framework */; };
-		D224A43513F4C185001416A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D224A43313F4C185001416A4 /* InfoPlist.strings */; };
-		D224A43813F4C185001416A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D224A43713F4C185001416A4 /* main.m */; };
-		D224A43B13F4C185001416A4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D224A43913F4C185001416A4 /* Credits.rtf */; };
-		D224A43E13F4C185001416A4 /* NSArrayExtensionsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D224A43D13F4C185001416A4 /* NSArrayExtensionsAppDelegate.m */; };
-		D224A44113F4C185001416A4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D224A43F13F4C185001416A4 /* MainMenu.xib */; };
-		D224A44813F4C185001416A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D224A42A13F4C185001416A4 /* Cocoa.framework */; };
-		D224A45013F4C185001416A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D224A44E13F4C185001416A4 /* InfoPlist.strings */; };
-		D224A45313F4C185001416A4 /* NSArrayExtensionsTests.h in Resources */ = {isa = PBXBuildFile; fileRef = D224A45213F4C185001416A4 /* NSArrayExtensionsTests.h */; };
-		D224A45513F4C185001416A4 /* NSArrayExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D224A45413F4C185001416A4 /* NSArrayExtensionsTests.m */; };
-		D224A46013F4C1CB001416A4 /* NSArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D224A45F13F4C1CB001416A4 /* NSArray+Extensions.m */; };
+		D2A648EE13F58B3A006921A1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A648ED13F58B3A006921A1 /* Cocoa.framework */; };
+		D2A648F813F58B3A006921A1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2A648F613F58B3A006921A1 /* InfoPlist.strings */; };
+		D2A648FB13F58B3A006921A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A648FA13F58B3A006921A1 /* main.m */; };
+		D2A648FE13F58B3A006921A1 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D2A648FC13F58B3A006921A1 /* Credits.rtf */; };
+		D2A6490113F58B3A006921A1 /* NSArrayExtensionsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A6490013F58B3A006921A1 /* NSArrayExtensionsAppDelegate.m */; };
+		D2A6490413F58B3A006921A1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A6490213F58B3A006921A1 /* MainMenu.xib */; };
+		D2A6490B13F58B3A006921A1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A648ED13F58B3A006921A1 /* Cocoa.framework */; };
+		D2A6491313F58B3A006921A1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2A6491113F58B3A006921A1 /* InfoPlist.strings */; };
+		D2A6491613F58B3A006921A1 /* NSArrayExtensionsTests.h in Resources */ = {isa = PBXBuildFile; fileRef = D2A6491513F58B3A006921A1 /* NSArrayExtensionsTests.h */; };
+		D2A6491813F58B3A006921A1 /* NSArrayExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A6491713F58B3A006921A1 /* NSArrayExtensionsTests.m */; };
+		D2A6492313F58B4E006921A1 /* NSArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A6492213F58B4E006921A1 /* NSArray+Extensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D224A44913F4C185001416A4 /* PBXContainerItemProxy */ = {
+		D2A6490C13F58B3A006921A1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D224A41D13F4C185001416A4 /* Project object */;
+			containerPortal = D2A648E013F58B3A006921A1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D224A42513F4C185001416A4;
+			remoteGlobalIDString = D2A648E813F58B3A006921A1;
 			remoteInfo = NSArrayExtensions;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D224A42613F4C185001416A4 /* NSArrayExtensions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSArrayExtensions.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D224A42A13F4C185001416A4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		D224A42D13F4C185001416A4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		D224A42E13F4C185001416A4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		D224A42F13F4C185001416A4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D224A43213F4C185001416A4 /* NSArrayExtensions-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NSArrayExtensions-Info.plist"; sourceTree = "<group>"; };
-		D224A43413F4C185001416A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D224A43613F4C185001416A4 /* NSArrayExtensions-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArrayExtensions-Prefix.pch"; sourceTree = "<group>"; };
-		D224A43713F4C185001416A4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D224A43A13F4C185001416A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		D224A43C13F4C185001416A4 /* NSArrayExtensionsAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSArrayExtensionsAppDelegate.h; sourceTree = "<group>"; };
-		D224A43D13F4C185001416A4 /* NSArrayExtensionsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSArrayExtensionsAppDelegate.m; sourceTree = "<group>"; };
-		D224A44013F4C185001416A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		D224A44713F4C185001416A4 /* NSArrayExtensionsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NSArrayExtensionsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D224A44D13F4C185001416A4 /* NSArrayExtensionsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NSArrayExtensionsTests-Info.plist"; sourceTree = "<group>"; };
-		D224A44F13F4C185001416A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D224A45113F4C185001416A4 /* NSArrayExtensionsTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArrayExtensionsTests-Prefix.pch"; sourceTree = "<group>"; };
-		D224A45213F4C185001416A4 /* NSArrayExtensionsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSArrayExtensionsTests.h; sourceTree = "<group>"; };
-		D224A45413F4C185001416A4 /* NSArrayExtensionsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSArrayExtensionsTests.m; sourceTree = "<group>"; };
-		D224A45E13F4C1CB001416A4 /* NSArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extensions.h"; sourceTree = "<group>"; };
-		D224A45F13F4C1CB001416A4 /* NSArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extensions.m"; sourceTree = "<group>"; };
+		D2A648E913F58B3A006921A1 /* NSArrayExtensions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSArrayExtensions.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2A648ED13F58B3A006921A1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D2A648F013F58B3A006921A1 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		D2A648F113F58B3A006921A1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D2A648F213F58B3A006921A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D2A648F513F58B3A006921A1 /* NSArrayExtensions-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NSArrayExtensions-Info.plist"; sourceTree = "<group>"; };
+		D2A648F713F58B3A006921A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D2A648F913F58B3A006921A1 /* NSArrayExtensions-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArrayExtensions-Prefix.pch"; sourceTree = "<group>"; };
+		D2A648FA13F58B3A006921A1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D2A648FD13F58B3A006921A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		D2A648FF13F58B3A006921A1 /* NSArrayExtensionsAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSArrayExtensionsAppDelegate.h; sourceTree = "<group>"; };
+		D2A6490013F58B3A006921A1 /* NSArrayExtensionsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSArrayExtensionsAppDelegate.m; sourceTree = "<group>"; };
+		D2A6490313F58B3A006921A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D2A6490A13F58B3A006921A1 /* NSArrayExtensionsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NSArrayExtensionsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2A6491013F58B3A006921A1 /* NSArrayExtensionsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NSArrayExtensionsTests-Info.plist"; sourceTree = "<group>"; };
+		D2A6491213F58B3A006921A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D2A6491413F58B3A006921A1 /* NSArrayExtensionsTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArrayExtensionsTests-Prefix.pch"; sourceTree = "<group>"; };
+		D2A6491513F58B3A006921A1 /* NSArrayExtensionsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSArrayExtensionsTests.h; sourceTree = "<group>"; };
+		D2A6491713F58B3A006921A1 /* NSArrayExtensionsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSArrayExtensionsTests.m; sourceTree = "<group>"; };
+		D2A6492113F58B4E006921A1 /* NSArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extensions.h"; sourceTree = "<group>"; };
+		D2A6492213F58B4E006921A1 /* NSArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D224A42313F4C185001416A4 /* Frameworks */ = {
+		D2A648E613F58B3A006921A1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D224A42B13F4C185001416A4 /* Cocoa.framework in Frameworks */,
+				D2A648EE13F58B3A006921A1 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D224A44313F4C185001416A4 /* Frameworks */ = {
+		D2A6490613F58B3A006921A1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D224A44813F4C185001416A4 /* Cocoa.framework in Frameworks */,
+				D2A6490B13F58B3A006921A1 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D224A41B13F4C185001416A4 = {
+		D2A648DE13F58B3A006921A1 = {
 			isa = PBXGroup;
 			children = (
-				D224A43013F4C185001416A4 /* NSArrayExtensions */,
-				D224A44B13F4C185001416A4 /* NSArrayExtensionsTests */,
-				D224A42913F4C185001416A4 /* Frameworks */,
-				D224A42713F4C185001416A4 /* Products */,
+				D2A648F313F58B3A006921A1 /* NSArrayExtensions */,
+				D2A6490E13F58B3A006921A1 /* NSArrayExtensionsTests */,
+				D2A648EC13F58B3A006921A1 /* Frameworks */,
+				D2A648EA13F58B3A006921A1 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D224A42713F4C185001416A4 /* Products */ = {
+		D2A648EA13F58B3A006921A1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D224A42613F4C185001416A4 /* NSArrayExtensions.app */,
-				D224A44713F4C185001416A4 /* NSArrayExtensionsTests.octest */,
+				D2A648E913F58B3A006921A1 /* NSArrayExtensions.app */,
+				D2A6490A13F58B3A006921A1 /* NSArrayExtensionsTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D224A42913F4C185001416A4 /* Frameworks */ = {
+		D2A648EC13F58B3A006921A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D224A42A13F4C185001416A4 /* Cocoa.framework */,
-				D224A42C13F4C185001416A4 /* Other Frameworks */,
+				D2A648ED13F58B3A006921A1 /* Cocoa.framework */,
+				D2A648EF13F58B3A006921A1 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D224A42C13F4C185001416A4 /* Other Frameworks */ = {
+		D2A648EF13F58B3A006921A1 /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D224A42D13F4C185001416A4 /* AppKit.framework */,
-				D224A42E13F4C185001416A4 /* CoreData.framework */,
-				D224A42F13F4C185001416A4 /* Foundation.framework */,
+				D2A648F013F58B3A006921A1 /* AppKit.framework */,
+				D2A648F113F58B3A006921A1 /* CoreData.framework */,
+				D2A648F213F58B3A006921A1 /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		D224A43013F4C185001416A4 /* NSArrayExtensions */ = {
+		D2A648F313F58B3A006921A1 /* NSArrayExtensions */ = {
 			isa = PBXGroup;
 			children = (
-				D224A43C13F4C185001416A4 /* NSArrayExtensionsAppDelegate.h */,
-				D224A43D13F4C185001416A4 /* NSArrayExtensionsAppDelegate.m */,
-				D224A43F13F4C185001416A4 /* MainMenu.xib */,
-				D224A43113F4C185001416A4 /* Supporting Files */,
-				D224A45E13F4C1CB001416A4 /* NSArray+Extensions.h */,
-				D224A45F13F4C1CB001416A4 /* NSArray+Extensions.m */,
+				D2A648FF13F58B3A006921A1 /* NSArrayExtensionsAppDelegate.h */,
+				D2A6490013F58B3A006921A1 /* NSArrayExtensionsAppDelegate.m */,
+				D2A6490213F58B3A006921A1 /* MainMenu.xib */,
+				D2A648F413F58B3A006921A1 /* Supporting Files */,
+				D2A6492113F58B4E006921A1 /* NSArray+Extensions.h */,
+				D2A6492213F58B4E006921A1 /* NSArray+Extensions.m */,
 			);
 			path = NSArrayExtensions;
 			sourceTree = "<group>";
 		};
-		D224A43113F4C185001416A4 /* Supporting Files */ = {
+		D2A648F413F58B3A006921A1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D224A43213F4C185001416A4 /* NSArrayExtensions-Info.plist */,
-				D224A43313F4C185001416A4 /* InfoPlist.strings */,
-				D224A43613F4C185001416A4 /* NSArrayExtensions-Prefix.pch */,
-				D224A43713F4C185001416A4 /* main.m */,
-				D224A43913F4C185001416A4 /* Credits.rtf */,
+				D2A648F513F58B3A006921A1 /* NSArrayExtensions-Info.plist */,
+				D2A648F613F58B3A006921A1 /* InfoPlist.strings */,
+				D2A648F913F58B3A006921A1 /* NSArrayExtensions-Prefix.pch */,
+				D2A648FA13F58B3A006921A1 /* main.m */,
+				D2A648FC13F58B3A006921A1 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D224A44B13F4C185001416A4 /* NSArrayExtensionsTests */ = {
+		D2A6490E13F58B3A006921A1 /* NSArrayExtensionsTests */ = {
 			isa = PBXGroup;
 			children = (
-				D224A45213F4C185001416A4 /* NSArrayExtensionsTests.h */,
-				D224A45413F4C185001416A4 /* NSArrayExtensionsTests.m */,
-				D224A44C13F4C185001416A4 /* Supporting Files */,
+				D2A6491513F58B3A006921A1 /* NSArrayExtensionsTests.h */,
+				D2A6491713F58B3A006921A1 /* NSArrayExtensionsTests.m */,
+				D2A6490F13F58B3A006921A1 /* Supporting Files */,
 			);
 			path = NSArrayExtensionsTests;
 			sourceTree = "<group>";
 		};
-		D224A44C13F4C185001416A4 /* Supporting Files */ = {
+		D2A6490F13F58B3A006921A1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D224A44D13F4C185001416A4 /* NSArrayExtensionsTests-Info.plist */,
-				D224A44E13F4C185001416A4 /* InfoPlist.strings */,
-				D224A45113F4C185001416A4 /* NSArrayExtensionsTests-Prefix.pch */,
+				D2A6491013F58B3A006921A1 /* NSArrayExtensionsTests-Info.plist */,
+				D2A6491113F58B3A006921A1 /* InfoPlist.strings */,
+				D2A6491413F58B3A006921A1 /* NSArrayExtensionsTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -160,13 +160,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D224A42513F4C185001416A4 /* NSArrayExtensions */ = {
+		D2A648E813F58B3A006921A1 /* NSArrayExtensions */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D224A45813F4C185001416A4 /* Build configuration list for PBXNativeTarget "NSArrayExtensions" */;
+			buildConfigurationList = D2A6491B13F58B3A006921A1 /* Build configuration list for PBXNativeTarget "NSArrayExtensions" */;
 			buildPhases = (
-				D224A42213F4C185001416A4 /* Sources */,
-				D224A42313F4C185001416A4 /* Frameworks */,
-				D224A42413F4C185001416A4 /* Resources */,
+				D2A648E513F58B3A006921A1 /* Sources */,
+				D2A648E613F58B3A006921A1 /* Frameworks */,
+				D2A648E713F58B3A006921A1 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -174,78 +174,78 @@
 			);
 			name = NSArrayExtensions;
 			productName = NSArrayExtensions;
-			productReference = D224A42613F4C185001416A4 /* NSArrayExtensions.app */;
+			productReference = D2A648E913F58B3A006921A1 /* NSArrayExtensions.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D224A44613F4C185001416A4 /* NSArrayExtensionsTests */ = {
+		D2A6490913F58B3A006921A1 /* NSArrayExtensionsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D224A45B13F4C185001416A4 /* Build configuration list for PBXNativeTarget "NSArrayExtensionsTests" */;
+			buildConfigurationList = D2A6491E13F58B3A006921A1 /* Build configuration list for PBXNativeTarget "NSArrayExtensionsTests" */;
 			buildPhases = (
-				D224A44213F4C185001416A4 /* Sources */,
-				D224A44313F4C185001416A4 /* Frameworks */,
-				D224A44413F4C185001416A4 /* Resources */,
-				D224A44513F4C185001416A4 /* ShellScript */,
+				D2A6490513F58B3A006921A1 /* Sources */,
+				D2A6490613F58B3A006921A1 /* Frameworks */,
+				D2A6490713F58B3A006921A1 /* Resources */,
+				D2A6490813F58B3A006921A1 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D224A44A13F4C185001416A4 /* PBXTargetDependency */,
+				D2A6490D13F58B3A006921A1 /* PBXTargetDependency */,
 			);
 			name = NSArrayExtensionsTests;
 			productName = NSArrayExtensionsTests;
-			productReference = D224A44713F4C185001416A4 /* NSArrayExtensionsTests.octest */;
+			productReference = D2A6490A13F58B3A006921A1 /* NSArrayExtensionsTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D224A41D13F4C185001416A4 /* Project object */ = {
+		D2A648E013F58B3A006921A1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = "Noah Santorello";
 			};
-			buildConfigurationList = D224A42013F4C185001416A4 /* Build configuration list for PBXProject "NSArrayExtensions" */;
+			buildConfigurationList = D2A648E313F58B3A006921A1 /* Build configuration list for PBXProject "NSArrayExtensions" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = D224A41B13F4C185001416A4;
-			productRefGroup = D224A42713F4C185001416A4 /* Products */;
+			mainGroup = D2A648DE13F58B3A006921A1;
+			productRefGroup = D2A648EA13F58B3A006921A1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D224A42513F4C185001416A4 /* NSArrayExtensions */,
-				D224A44613F4C185001416A4 /* NSArrayExtensionsTests */,
+				D2A648E813F58B3A006921A1 /* NSArrayExtensions */,
+				D2A6490913F58B3A006921A1 /* NSArrayExtensionsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D224A42413F4C185001416A4 /* Resources */ = {
+		D2A648E713F58B3A006921A1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D224A43513F4C185001416A4 /* InfoPlist.strings in Resources */,
-				D224A43B13F4C185001416A4 /* Credits.rtf in Resources */,
-				D224A44113F4C185001416A4 /* MainMenu.xib in Resources */,
+				D2A648F813F58B3A006921A1 /* InfoPlist.strings in Resources */,
+				D2A648FE13F58B3A006921A1 /* Credits.rtf in Resources */,
+				D2A6490413F58B3A006921A1 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D224A44413F4C185001416A4 /* Resources */ = {
+		D2A6490713F58B3A006921A1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D224A45013F4C185001416A4 /* InfoPlist.strings in Resources */,
-				D224A45313F4C185001416A4 /* NSArrayExtensionsTests.h in Resources */,
+				D2A6491313F58B3A006921A1 /* InfoPlist.strings in Resources */,
+				D2A6491613F58B3A006921A1 /* NSArrayExtensionsTests.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D224A44513F4C185001416A4 /* ShellScript */ = {
+		D2A6490813F58B3A006921A1 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -261,63 +261,63 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D224A42213F4C185001416A4 /* Sources */ = {
+		D2A648E513F58B3A006921A1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D224A43813F4C185001416A4 /* main.m in Sources */,
-				D224A43E13F4C185001416A4 /* NSArrayExtensionsAppDelegate.m in Sources */,
-				D224A46013F4C1CB001416A4 /* NSArray+Extensions.m in Sources */,
+				D2A648FB13F58B3A006921A1 /* main.m in Sources */,
+				D2A6490113F58B3A006921A1 /* NSArrayExtensionsAppDelegate.m in Sources */,
+				D2A6492313F58B4E006921A1 /* NSArray+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D224A44213F4C185001416A4 /* Sources */ = {
+		D2A6490513F58B3A006921A1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D224A45513F4C185001416A4 /* NSArrayExtensionsTests.m in Sources */,
+				D2A6491813F58B3A006921A1 /* NSArrayExtensionsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D224A44A13F4C185001416A4 /* PBXTargetDependency */ = {
+		D2A6490D13F58B3A006921A1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D224A42513F4C185001416A4 /* NSArrayExtensions */;
-			targetProxy = D224A44913F4C185001416A4 /* PBXContainerItemProxy */;
+			target = D2A648E813F58B3A006921A1 /* NSArrayExtensions */;
+			targetProxy = D2A6490C13F58B3A006921A1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D224A43313F4C185001416A4 /* InfoPlist.strings */ = {
+		D2A648F613F58B3A006921A1 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D224A43413F4C185001416A4 /* en */,
+				D2A648F713F58B3A006921A1 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		D224A43913F4C185001416A4 /* Credits.rtf */ = {
+		D2A648FC13F58B3A006921A1 /* Credits.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D224A43A13F4C185001416A4 /* en */,
+				D2A648FD13F58B3A006921A1 /* en */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
-		D224A43F13F4C185001416A4 /* MainMenu.xib */ = {
+		D2A6490213F58B3A006921A1 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D224A44013F4C185001416A4 /* en */,
+				D2A6490313F58B3A006921A1 /* en */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
-		D224A44E13F4C185001416A4 /* InfoPlist.strings */ = {
+		D2A6491113F58B3A006921A1 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D224A44F13F4C185001416A4 /* en */,
+				D2A6491213F58B3A006921A1 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -325,7 +325,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D224A45613F4C185001416A4 /* Debug */ = {
+		D2A6491913F58B3A006921A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
@@ -343,7 +343,7 @@
 			};
 			name = Debug;
 		};
-		D224A45713F4C185001416A4 /* Release */ = {
+		D2A6491A13F58B3A006921A1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
@@ -357,7 +357,7 @@
 			};
 			name = Release;
 		};
-		D224A45913F4C185001416A4 /* Debug */ = {
+		D2A6491C13F58B3A006921A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -372,7 +372,7 @@
 			};
 			name = Debug;
 		};
-		D224A45A13F4C185001416A4 /* Release */ = {
+		D2A6491D13F58B3A006921A1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -387,7 +387,7 @@
 			};
 			name = Release;
 		};
-		D224A45C13F4C185001416A4 /* Debug */ = {
+		D2A6491F13F58B3A006921A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -409,7 +409,7 @@
 			};
 			name = Debug;
 		};
-		D224A45D13F4C185001416A4 /* Release */ = {
+		D2A6492013F58B3A006921A1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -434,32 +434,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D224A42013F4C185001416A4 /* Build configuration list for PBXProject "NSArrayExtensions" */ = {
+		D2A648E313F58B3A006921A1 /* Build configuration list for PBXProject "NSArrayExtensions" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D224A45613F4C185001416A4 /* Debug */,
-				D224A45713F4C185001416A4 /* Release */,
+				D2A6491913F58B3A006921A1 /* Debug */,
+				D2A6491A13F58B3A006921A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D224A45813F4C185001416A4 /* Build configuration list for PBXNativeTarget "NSArrayExtensions" */ = {
+		D2A6491B13F58B3A006921A1 /* Build configuration list for PBXNativeTarget "NSArrayExtensions" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D224A45913F4C185001416A4 /* Debug */,
-				D224A45A13F4C185001416A4 /* Release */,
+				D2A6491C13F58B3A006921A1 /* Debug */,
+				D2A6491D13F58B3A006921A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		D224A45B13F4C185001416A4 /* Build configuration list for PBXNativeTarget "NSArrayExtensionsTests" */ = {
+		D2A6491E13F58B3A006921A1 /* Build configuration list for PBXNativeTarget "NSArrayExtensionsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D224A45C13F4C185001416A4 /* Debug */,
-				D224A45D13F4C185001416A4 /* Release */,
+				D2A6491F13F58B3A006921A1 /* Debug */,
+				D2A6492013F58B3A006921A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D224A41D13F4C185001416A4 /* Project object */;
+	rootObject = D2A648E013F58B3A006921A1 /* Project object */;
 }

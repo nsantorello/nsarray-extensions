@@ -2,7 +2,7 @@
 //  NSArrayExtensionsAppDelegate.m
 //  NSArrayExtensions
 //
-//  Created by Noah Santorello on 8/11/11.
+//  Created by Noah Santorello on 8/12/11.
 //  Copyright 2011 Noah Santorello. All rights reserved.
 //
 
@@ -16,7 +16,10 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
-    NSArray* array = [NSArray arrayWithObjects:
+    NSArray* array = [NSArray arrayWithObjects:[NSNumber numberWithInt:1],
+                      [NSNumber numberWithInt:2],
+                      [NSNumber numberWithInt:2],
+                      [NSNumber numberWithInt:3],
                       nil];
     BOOL all = [array all:^BOOL(id obj) {
         return [((NSNumber*)obj) intValue] > 0;

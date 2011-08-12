@@ -1,11 +1,3 @@
-//
-//  NSArray+Extensions.m
-//  NSArrayExtensions
-//
-//  Created by Noah Santorello on 8/11/11.
-//  Copyright 2011 Noah Santorello. All rights reserved.
-//
-
 // TODO: (ns): throw exceptions within functions if fn == nil
 
 #import "NSArray+Extensions.h"
