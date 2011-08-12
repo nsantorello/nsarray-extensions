@@ -16,10 +16,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
-    NSArray* array = [NSArray arrayWithObjects:[NSNumber numberWithInt:1],
-                      [NSNumber numberWithInt:2],
-                      [NSNumber numberWithInt:2],
-                      [NSNumber numberWithInt:3],
+    NSArray* array = [NSArray arrayWithObjects:
                       nil];
     BOOL all = [array all:^BOOL(id obj) {
         return [((NSNumber*)obj) intValue] > 0;
@@ -38,6 +35,9 @@
     }];
     NSArray* filter = [array filter:^BOOL(id obj) {
         return [((NSNumber*)obj) intValue] < 3;
+    }];
+    NSArray* uniques = [array unique:^id(id obj) {
+        return obj;
     }];
 }
 

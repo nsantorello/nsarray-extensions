@@ -87,4 +87,20 @@
     return [[self filter:fn] autorelease];
 }
 
+-(NSArray*)unique:(id(^)(id obj))fn
+{
+    __block NSMutableArray* uniques = [[[NSMutableArray alloc] init] autorelease];
+    
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (![uniques contains:^BOOL(id obj2) {
+            return [fn(obj) isEqual:fn(obj2)];
+        }])
+        {
+            [uniques addObject:obj];
+        }
+    }];
+    
+    return uniques;
+}
+
 @end

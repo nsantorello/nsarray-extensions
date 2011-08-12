@@ -19,5 +19,6 @@
 -(BOOL)none:(BOOL(^)(id obj))fn;
 -(BOOL)one:(BOOL(^)(id obj))fn;
 -(NSArray*)select:(BOOL(^)(id obj))fn;
+-(NSArray*)unique:(id(^)(id obj))fn;
 
 @end
