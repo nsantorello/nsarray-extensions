@@ -1,3 +1,6 @@
+Write documentation
+Write tests
+
 chunk   
 collect   
 collect_concat   
@@ -11,8 +14,6 @@ each_slice
 each_with_index   
 each_with_object   
 entries   
-find   
-find_all   
 find_index   
 flat_map   
 grep   

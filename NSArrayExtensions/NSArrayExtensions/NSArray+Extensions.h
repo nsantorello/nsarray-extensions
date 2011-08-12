@@ -6,6 +6,7 @@
 -(BOOL)contains:(BOOL(^)(id obj))fn;
 -(NSInteger)count:(BOOL(^)(id obj))fn;
 -(NSArray*)filter:(BOOL(^)(id obj))fn;
+-(id)find:(BOOL(^)(id obj))fn;
 -(NSArray*)findAll:(BOOL(^)(id obj))fn;
 -(id)first;
 -(id)foldl:(id) acc fn:(id(^)(id acc, id obj))fn;

@@ -42,6 +42,9 @@
     NSArray* uniques = [array unique:^id(id obj) {
         return obj;
     }];
+    NSArray* find = [array find:^BOOL(id obj) {
+        return [((NSNumber*)obj) intValue] == 0;
+    }];
 }
 
 @end

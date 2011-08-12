@@ -5,6 +5,25 @@
 
 @implementation NSArray (Extensions)
 
+#pragma mark - Private Functions
+
+-(NSArray*)filter:(BOOL(^)(id obj))fn stopOnFind:(BOOL)stopOnFind
+{
+    __block NSMutableArray* filtered = [[NSMutableArray alloc] init];
+    
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (fn(obj))
+        {
+            [filtered addObject:obj];
+            *stop = stopOnFind;
+        }
+    }];
+    
+    return [filtered autorelease];
+}
+
+#pragma mark - Public Functions
+
 -(BOOL)all:(BOOL(^)(id obj))fn
 {    
     __block BOOL all = true;
@@ -37,16 +56,13 @@
 
 -(NSArray*)filter:(BOOL(^)(id obj))fn
 {
-    __block NSMutableArray* filtered = [[NSMutableArray alloc] init];
-    
-    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        if (fn(obj))
-        {
-            [filtered addObject:obj];
-        }
-    }];
-    
-    return [filtered autorelease];
+    return [[self filter:fn stopOnFind:NO] autorelease];
+}
+
+-(id)find:(BOOL(^)(id obj))fn
+{
+    NSArray* found = [self filter:fn stopOnFind:YES];
+    return [found count] > 0 ? [found first] : nil;
 }
 
 -(NSArray*)findAll:(BOOL(^)(id obj))fn
@@ -56,7 +72,7 @@
 
 -(id)first
 {
-    return [self count] == 0 ? nil : [self objectAtIndex:0];
+    return [self count] ? [self objectAtIndex:0] : nil;
 }
 
 -(id)foldl:(id) acc fn:(id(^)(id acc, id obj))fn
