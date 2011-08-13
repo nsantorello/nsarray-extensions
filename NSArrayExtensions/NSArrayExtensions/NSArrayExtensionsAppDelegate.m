@@ -48,6 +48,7 @@
     NSInteger findIndex = [array findIndex:^BOOL(id obj) {
         return [((NSNumber*)obj) intValue] == 3;
     }];
+    NSArray* take = [array take:6];
 }
 
 @end

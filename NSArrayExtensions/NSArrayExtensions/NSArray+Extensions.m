@@ -9,7 +9,7 @@
 
 -(NSArray*)filter:(BOOL(^)(id obj))fn stopOnFind:(BOOL)stopOnFind
 {
-    __block NSMutableArray* filtered = [[NSMutableArray alloc] init];
+    __block NSMutableArray* filtered = [[[NSMutableArray alloc] init] autorelease];
     
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         if (fn(obj))
@@ -19,7 +19,7 @@
         }
     }];
     
-    return [filtered autorelease];
+    return filtered;
 }
 
 #pragma mark - Public Functions
@@ -90,6 +90,23 @@
     return [self count] ? [self objectAtIndex:0] : nil;
 }
 
+-(NSArray*)first:(NSUInteger)n
+{
+    // TODO: (ns): Check for negative elements and error out if n < 0
+    
+    __block NSMutableArray* firsts = [[[NSMutableArray alloc] init] autorelease];
+    
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        *stop = !(idx < n);
+        if (!(*stop))
+        {
+            [firsts addObject:obj];
+        }
+    }];
+    
+    return firsts;
+}
+
 -(id)foldl:(id) acc fn:(id(^)(id acc, id obj))fn
 {
     return [[self reduce:acc fn:fn] autorelease];
@@ -124,6 +141,11 @@
 -(NSArray*)select:(BOOL(^)(id obj))fn
 {
     return [[self filter:fn] autorelease];
+}
+
+-(NSArray*)take:(NSUInteger)n
+{
+    return [[self first:n] autorelease];
 }
 
 -(NSArray*)unique:(id(^)(id obj))fn

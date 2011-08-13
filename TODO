@@ -31,7 +31,4 @@ reverse_each
 slice_before  
 sort   
 sort_by   
-take   
 take_while   
-to_a   
-zip  
