@@ -197,6 +197,21 @@
     return map;
 }
 
+-(id)max
+{
+    return [[self sort] last];
+}
+
+-(id)max:(NSComparisonResult(^)(id obj1, id obj2))fn
+{
+    return [[self sort:fn] last];
+}
+
+-(id)maxBy:(id(^)(id obj))fn
+{
+    return [[self sortBy:fn] last];
+}
+
 -(BOOL)none:(BOOL(^)(id obj))fn
 {
     return [self count:fn] == 0;

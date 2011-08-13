@@ -100,6 +100,10 @@
         return obj;
     }];
     id last = [array last];
+    id max = [array max];
+    id maxBy = [peeps maxBy:^id(id obj) {
+        return ((Person*)obj).address;
+    }];
 }
 
 @end

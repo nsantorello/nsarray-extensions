@@ -22,6 +22,9 @@
 -(id)inject:(id) acc fn:(id(^)(id acc, id obj))fn;
 -(id)last;
 -(NSArray*)map:(id(^)(id obj))fn;
+-(id)max;
+-(id)max:(NSComparisonResult(^)(id obj1, id obj2))fn;
+-(id)maxBy:(id(^)(id obj))fn;
 -(BOOL)none:(BOOL(^)(id obj))fn;
 -(BOOL)one:(BOOL(^)(id obj))fn;
 -(NSArray*)partition:(BOOL(^)(id obj))fn;
