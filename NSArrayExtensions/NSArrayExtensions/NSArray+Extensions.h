@@ -3,6 +3,8 @@
 @interface NSArray (Extensions)
 
 -(BOOL)all:(BOOL(^)(id obj))fn;
+-(BOOL)any:(BOOL(^)(id obj))fn;
+-(NSArray*)collect:(id(^)(id obj))fn;
 -(BOOL)contains:(BOOL(^)(id obj))fn;
 -(NSUInteger)count:(BOOL(^)(id obj))fn;
 -(NSArray*)filter:(BOOL(^)(id obj))fn;

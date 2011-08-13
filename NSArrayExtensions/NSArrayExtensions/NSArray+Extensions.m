@@ -35,6 +35,16 @@
     return all;
 }
 
+-(BOOL)any:(BOOL(^)(id obj))fn
+{
+    return [[self contains:fn] autorelease];
+}
+
+-(NSArray*)collect:(id(^)(id obj))fn
+{
+    return [[self map:fn] autorelease];
+}
+
 -(BOOL)contains:(BOOL(^)(id obj))fn
 {
     return [self count:fn] > 0;
