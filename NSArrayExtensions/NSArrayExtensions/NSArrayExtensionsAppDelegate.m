@@ -20,6 +20,11 @@
                       [NSNumber numberWithInt:2],
                       [NSNumber numberWithInt:2],
                       [NSNumber numberWithInt:3],
+                      [NSNumber numberWithInt:1],
+                      [NSNumber numberWithInt:2],
+                      [NSNumber numberWithInt:2],
+                      [NSNumber numberWithInt:3],
+                      [NSNumber numberWithInt:-1],
                       nil];
     BOOL all = [array all:^BOOL(id obj) {
         return [((NSNumber*)obj) intValue] > 0;
@@ -49,6 +54,9 @@
         return [((NSNumber*)obj) intValue] == 3;
     }];
     NSArray* take = [array take:6];
+    NSArray* takeWhile = [array takeWhile:^BOOL(id obj) {
+        return [((NSNumber*)obj) intValue] < 4;
+    }];
 }
 
 @end

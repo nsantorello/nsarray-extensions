@@ -18,6 +18,7 @@
 -(id)reduce:(id) acc fn:(id(^)(id acc, id obj))fn;
 -(NSArray*)select:(BOOL(^)(id obj))fn;
 -(NSArray*)take:(NSUInteger)n;
+-(NSArray*)takeWhile:(BOOL(^)(id obj))fn;
 -(NSArray*)unique:(id(^)(id obj))fn;
 
 @end

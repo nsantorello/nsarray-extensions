@@ -148,6 +148,21 @@
     return [[self first:n] autorelease];
 }
 
+-(NSArray*)takeWhile:(BOOL(^)(id obj))fn
+{
+    __block NSMutableArray* take = [[[NSMutableArray alloc] init] autorelease];
+    
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        *stop = !fn(obj);
+        if (!(*stop))
+        {
+            [take addObject:obj];
+        }
+    }];
+    
+    return take;
+}
+
 -(NSArray*)unique:(id(^)(id obj))fn
 {
     __block NSMutableArray* uniques = [[[NSMutableArray alloc] init] autorelease];
