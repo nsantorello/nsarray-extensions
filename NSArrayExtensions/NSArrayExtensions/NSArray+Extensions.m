@@ -274,18 +274,16 @@
 
 -(NSArray*)unique:(id(^)(id obj))fn
 {
-    __block NSMutableArray* uniques = [[[NSMutableArray alloc] init] autorelease];
+    __block NSMutableDictionary* uniques = [[[NSMutableDictionary alloc] init] autorelease];
     
     [self each:^(id obj) {
-        if (![uniques contains:^BOOL(id obj2) {
-            return [fn(obj) isEqual:fn(obj2)];
-        }])
+        if ([uniques objectForKey:obj] == nil)
         {
-            [uniques addObject:obj];
+            [uniques setValue:obj forKey:obj];
         }
     }];
     
-    return uniques;
+    return [uniques allKeys];
 }
 
 @end

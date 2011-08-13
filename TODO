@@ -1,6 +1,5 @@
 Write documentation in code and on a hosted webpage
 Write unit tests
-reimplement unique with NSDictionary (duh!!!)
 
 chunk   
 cycle   
@@ -9,7 +8,6 @@ each_cons
 each_entry   
 each_slice   
 grep   
-group_by   
 max   
 max_by   
 min   
