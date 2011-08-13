@@ -193,7 +193,7 @@
     // TODO: (ns): there is probably a memory leak in this function.
     __block id blockAcc = acc;
     [self each:^(id obj) {
-        blockAcc = [fn(blockAcc, obj) autorelease];
+        blockAcc = [fn(blockAcc, obj) retain];
     }];
 
     return [blockAcc autorelease];
