@@ -296,6 +296,13 @@
     return [blockAcc autorelease];
 }
 
+-(NSArray*)reverse
+{
+    // Credit for this very elegant line of code goes to danielpunkass:
+    //  http://stackoverflow.com/questions/586370/how-can-i-reverse-a-nsarray-in-objective-c
+    return [[[self reverseObjectEnumerator] allObjects] autorelease];
+}
+
 -(NSArray*)select:(BOOL(^)(id obj))fn
 {
     return [[self filter:fn] autorelease];
