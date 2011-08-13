@@ -239,6 +239,11 @@
     return [[self filter:fn] autorelease];
 }
 
+-(NSArray*)sort
+{
+    return [[self sortedArrayUsingSelector:@selector(compare:)] autorelease];
+}
+
 -(NSArray*)sort:(NSComparisonResult(^)(id obj1, id obj2))fn
 {
     return [[self sortedArrayUsingComparator:fn] autorelease];

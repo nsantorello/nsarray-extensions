@@ -75,6 +75,7 @@
     NSArray* sortedUniques = [uniques sortBy:^id(id obj) {
         return obj;
     }];
+    NSArray* sort = [array sort];
     NSArray* find = [array find:^BOOL(id obj) {
         return [((NSNumber*)obj) intValue] == 0;
     }];
