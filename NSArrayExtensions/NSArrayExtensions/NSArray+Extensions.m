@@ -181,6 +181,11 @@
     return [[self reduce:acc fn:fn] autorelease];
 }
 
+-(id)last
+{
+    return [self lastObject];
+}
+
 -(NSArray*)map:(id(^)(id obj))fn
 {
     __block NSMutableArray* map = [[[NSMutableArray alloc] initWithCapacity:[self count]] autorelease];

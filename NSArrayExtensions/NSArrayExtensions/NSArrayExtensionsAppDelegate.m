@@ -99,6 +99,7 @@
     NSDictionary* groupBy = [array groupBy:^id(id obj) {
         return obj;
     }];
+    id last = [array last];
 }
 
 @end

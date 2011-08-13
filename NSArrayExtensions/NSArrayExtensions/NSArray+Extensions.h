@@ -20,6 +20,7 @@
 -(id)foldl:(id) acc fn:(id(^)(id acc, id obj))fn;
 -(NSDictionary*)groupBy:(id(^)(id obj))fn;
 -(id)inject:(id) acc fn:(id(^)(id acc, id obj))fn;
+-(id)last;
 -(NSArray*)map:(id(^)(id obj))fn;
 -(BOOL)none:(BOOL(^)(id obj))fn;
 -(BOOL)one:(BOOL(^)(id obj))fn;
