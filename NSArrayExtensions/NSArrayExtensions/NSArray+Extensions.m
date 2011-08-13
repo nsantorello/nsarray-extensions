@@ -192,6 +192,12 @@
     return [self lastObject];
 }
 
+-(NSArray*)last:(NSUInteger)n
+{
+    // TODO: (ns): Check for negative elements and error out if n < 0?  Or just behave as if < 0 was == 0?
+    return [[[[self reverse] first:n] reverse] autorelease];
+}
+
 -(NSArray*)map:(id(^)(id obj))fn
 {
     __block NSMutableArray* map = [[[NSMutableArray alloc] initWithCapacity:[self count]] autorelease];

@@ -113,6 +113,7 @@
         return ((Person*)obj).address;
     }];
     id reverse = [array reverse];
+    id lasts = [array last:6];
 }
 
 @end

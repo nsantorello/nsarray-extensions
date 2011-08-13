@@ -21,6 +21,7 @@
 -(NSDictionary*)groupBy:(id(^)(id obj))fn;
 -(id)inject:(id) acc fn:(id(^)(id acc, id obj))fn;
 -(id)last;
+-(NSArray*)last:(NSUInteger)n;
 -(NSArray*)map:(id(^)(id obj))fn;
 -(id)max;
 -(id)max:(NSComparisonResult(^)(id obj1, id obj2))fn;

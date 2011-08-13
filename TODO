@@ -8,8 +8,5 @@ each_cons
 each_entry   
 each_slice   
 grep   
-last(n) - grab last n objects in array
 reject   
-reverse   
-reverse_each   
 slice_before  
