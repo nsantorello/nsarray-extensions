@@ -28,7 +28,7 @@
 {    
     __block BOOL all = true;
     
-    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [self each:^(id obj) {
         all = all && fn(obj);
     }];
     
@@ -54,7 +54,7 @@
 {
     __block NSUInteger count = 0;
     
-    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [self each:^(id obj) {
         if (fn(obj))
         {
             count++;
@@ -62,6 +62,25 @@
     }];
     
     return count;
+}
+
+-(id)detect:(BOOL(^)(id obj))fn
+{
+    return [[self find:fn] autorelease];
+}
+
+-(void)each:(void(^)(id obj))fn
+{
+    [self eachWithIndex:^(id obj, NSUInteger index) {
+        fn(obj);
+    }];
+}
+
+-(void)eachWithIndex:(void(^)(id obj, NSUInteger index))fn
+{
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        fn(obj, idx);
+    }];
 }
 
 -(NSArray*)filter:(BOOL(^)(id obj))fn
@@ -131,7 +150,7 @@
 {
     __block NSMutableArray* map = [[[NSMutableArray alloc] initWithCapacity:[self count]] autorelease];
     
-    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [self each:^(id obj) {
         [map addObject:fn(obj)];
     }];
     
@@ -153,7 +172,7 @@
     __block NSMutableArray* trueVals = [[[NSMutableArray alloc] init] autorelease];
     __block NSMutableArray* falseVals = [[[NSMutableArray alloc] init] autorelease];
     
-    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [self each:^(id obj) {
         if (fn(obj))
         {
             [trueVals addObject:obj];
@@ -173,8 +192,8 @@
 {
     // TODO: (ns): there is probably a memory leak in this function.
     __block id blockAcc = acc;
-    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        blockAcc = [fn(blockAcc, obj) retain];
+    [self each:^(id obj) {
+        blockAcc = [fn(blockAcc, obj) autorelease];
     }];
 
     return [blockAcc autorelease];
@@ -222,7 +241,7 @@
 {
     __block NSMutableArray* uniques = [[[NSMutableArray alloc] init] autorelease];
     
-    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [self each:^(id obj) {
         if (![uniques contains:^BOOL(id obj2) {
             return [fn(obj) isEqual:fn(obj2)];
         }])

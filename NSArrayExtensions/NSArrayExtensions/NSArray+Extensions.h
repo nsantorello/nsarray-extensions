@@ -7,6 +7,9 @@
 -(NSArray*)collect:(id(^)(id obj))fn;
 -(BOOL)contains:(BOOL(^)(id obj))fn;
 -(NSUInteger)count:(BOOL(^)(id obj))fn;
+-(id)detect:(BOOL(^)(id obj))fn;
+-(void)each:(void(^)(id obj))fn;
+-(void)eachWithIndex:(void(^)(id obj, NSUInteger index))fn;
 -(NSArray*)filter:(BOOL(^)(id obj))fn;
 -(id)find:(BOOL(^)(id obj))fn;
 -(NSArray*)findAll:(BOOL(^)(id obj))fn;

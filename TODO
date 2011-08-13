@@ -2,18 +2,13 @@ Write documentation in code and on a hosted webpage
 Write tests
 
 chunk   
-collect_concat   
 cycle   
-detect   
 drop   
 drop_while   
 each_cons   
 each_entry   
 each_slice   
-each_with_index   
-each_with_object   
 entries   
-flat_map   
 grep   
 group_by   
 max   
