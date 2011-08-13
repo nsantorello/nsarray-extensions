@@ -22,6 +22,12 @@
     return filtered;
 }
 
+-(NSArray*)minMaxHelper:(NSArray*(^)())fn
+{
+    NSArray* sorted = fn();
+    return [[NSArray arrayWithObjects:[sorted first], [sorted last], nil] autorelease];
+}
+
 #pragma mark - Public Functions
 
 -(BOOL)all:(BOOL(^)(id obj))fn
@@ -37,7 +43,7 @@
 
 -(BOOL)any:(BOOL(^)(id obj))fn
 {
-    return [[self contains:fn] autorelease];
+    return [self contains:fn];
 }
 
 -(NSArray*)collect:(id(^)(id obj))fn
@@ -135,7 +141,7 @@
 
 -(NSArray*)first:(NSUInteger)n
 {
-    // TODO: (ns): Check for negative elements and error out if n < 0?
+    // TODO: (ns): Check for negative elements and error out if n < 0?  Or just behave as if < 0 was == 0?
     
     __block NSMutableArray* firsts = [[[NSMutableArray alloc] init] autorelease];
     
@@ -225,6 +231,27 @@
 -(id)minBy:(id(^)(id obj))fn
 {
     return [[self sortBy:fn] first];
+    
+}
+
+-(NSArray*)minMax
+{
+    return [[self minMaxHelper:^NSArray *() {
+        return [[self sort] autorelease];
+    }] autorelease];
+}
+
+-(NSArray*)minMax:(NSComparisonResult(^)(id obj1, id obj2))fn
+{
+    return [[self minMaxHelper:^NSArray *() {
+        return [[self sort:fn] autorelease];
+    }] autorelease];
+}
+-(NSArray*)minMaxBy:(id(^)(id obj))fn
+{
+    return [[self minMaxHelper:^NSArray *() {
+        return [[self sortBy:fn] autorelease];
+    }] autorelease];
 }
 
 -(BOOL)none:(BOOL(^)(id obj))fn

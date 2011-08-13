@@ -28,6 +28,9 @@
 -(id)min;
 -(id)min:(NSComparisonResult(^)(id obj1, id obj2))fn;
 -(id)minBy:(id(^)(id obj))fn;
+-(NSArray*)minMax;
+-(NSArray*)minMax:(NSComparisonResult(^)(id obj1, id obj2))fn;
+-(NSArray*)minMaxBy:(id(^)(id obj))fn;
 -(BOOL)none:(BOOL(^)(id obj))fn;
 -(BOOL)one:(BOOL(^)(id obj))fn;
 -(NSArray*)partition:(BOOL(^)(id obj))fn;

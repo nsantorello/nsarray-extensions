@@ -108,6 +108,10 @@
     id minBy = [peeps minBy:^id(id obj) {
         return ((Person*)obj).address;
     }]; 
+    id minMax = [array minMax];
+    id minMaxBy = [peeps minMaxBy:^id(id obj) {
+        return ((Person*)obj).address;
+    }];
 }
 
 @end
