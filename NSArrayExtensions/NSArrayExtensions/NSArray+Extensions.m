@@ -117,6 +117,17 @@
     return [[self reduce:acc fn:fn] autorelease];
 }
 
+-(NSArray*)map:(id(^)(id obj))fn
+{
+    __block NSMutableArray* map = [[[NSMutableArray alloc] init] autorelease];
+    
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [map addObject:fn(obj)];
+    }];
+    
+    return map;
+}
+
 -(BOOL)none:(BOOL(^)(id obj))fn
 {
     return [self count:fn] == 0;

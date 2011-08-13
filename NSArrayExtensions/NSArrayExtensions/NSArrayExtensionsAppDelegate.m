@@ -85,6 +85,9 @@
     NSArray* sortBy = [peeps sortBy:^id(id obj) {
         return ((Person*)obj).address;
     }];
+    NSArray* map = [peeps map:^id(id obj) {
+        return ((Person*)obj).address;
+    }];
 }
 
 @end
