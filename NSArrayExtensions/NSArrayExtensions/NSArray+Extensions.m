@@ -135,7 +135,7 @@
 
 -(NSArray*)first:(NSUInteger)n
 {
-    // TODO: (ns): Check for negative elements and error out if n < 0
+    // TODO: (ns): Check for negative elements and error out if n < 0?
     
     __block NSMutableArray* firsts = [[[NSMutableArray alloc] init] autorelease];
     
@@ -153,6 +153,27 @@
 -(id)foldl:(id) acc fn:(id(^)(id acc, id obj))fn
 {
     return [[self reduce:acc fn:fn] autorelease];
+}
+
+-(NSDictionary*)groupBy:(id(^)(id obj))fn
+{    
+    __block NSMutableDictionary* groups = [[[NSMutableDictionary alloc] init] autorelease];
+    
+    [self each:^(id obj) {
+        id key = fn(obj);
+        NSMutableArray* val = (NSMutableArray*)[groups objectForKey:key];
+        if (val == nil)
+        {
+            val = [[NSMutableArray alloc] initWithObjects:obj, nil];
+            [groups setValue:val forKey:key];
+        }
+        else
+        {
+            [val addObject:obj];
+        }
+    }];
+    
+    return groups;
 }
 
 -(id)inject:(id) acc fn:(id(^)(id acc, id obj))fn
@@ -183,8 +204,8 @@
 
 -(NSArray*)partition:(BOOL(^)(id obj))fn
 {
-    __block NSMutableArray* trueVals = [[[NSMutableArray alloc] init] autorelease];
-    __block NSMutableArray* falseVals = [[[NSMutableArray alloc] init] autorelease];
+    __block NSMutableArray* trueVals = [[NSMutableArray alloc] init];
+    __block NSMutableArray* falseVals = [[NSMutableArray alloc] init];
     
     [self each:^(id obj) {
         if (fn(obj))

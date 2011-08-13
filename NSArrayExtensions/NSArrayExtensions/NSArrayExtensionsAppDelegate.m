@@ -95,6 +95,9 @@
         return [((NSNumber*)obj) intValue] <= 1;
     }];
     NSArray* drop = [array drop:0];
+    NSDictionary* groupBy = [array groupBy:^id(id obj) {
+        return obj;
+    }];
 }
 
 @end

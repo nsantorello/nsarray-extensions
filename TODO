@@ -1,5 +1,6 @@
 Write documentation in code and on a hosted webpage
-Write tests
+Write unit tests
+reimplement unique with NSDictionary (duh!!!)
 
 chunk   
 cycle   
@@ -7,7 +8,6 @@ drop_while
 each_cons   
 each_entry   
 each_slice   
-entries   
 grep   
 group_by   
 max   
