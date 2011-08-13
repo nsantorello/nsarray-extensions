@@ -8,8 +8,6 @@ each_cons
 each_entry   
 each_slice   
 grep   
-min   
-min_by   
 minmax   
 minmax_by   
 reject   

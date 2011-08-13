@@ -212,6 +212,21 @@
     return [[self sortBy:fn] last];
 }
 
+-(id)min
+{
+    return [[self sort] first];
+}
+
+-(id)min:(NSComparisonResult(^)(id obj1, id obj2))fn
+{
+    return [[self sort:fn] first];
+}
+
+-(id)minBy:(id(^)(id obj))fn
+{
+    return [[self sortBy:fn] first];
+}
+
 -(BOOL)none:(BOOL(^)(id obj))fn
 {
     return [self count:fn] == 0;
