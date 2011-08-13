@@ -9,9 +9,27 @@
 #import "NSArrayExtensionsAppDelegate.h"
 #import "NSArray+Extensions.h"
 
+@interface Person : NSObject
+{
+    
+}
+@property (copy)NSString* name;
+@property (copy)NSString* address;
+@end
+@implementation Person
+@synthesize  name, address;
+
+-(NSString*)description
+{
+    return [NSString stringWithFormat:@"Name: %@, Address: %@", name, address];
+}
+
+@end
+
 @implementation NSArrayExtensionsAppDelegate
 
 @synthesize window;
+
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -26,6 +44,13 @@
                       [NSNumber numberWithInt:3],
                       [NSNumber numberWithInt:-1],
                       nil];
+    Person* p1 = [[Person alloc] init];
+    p1.name = @"Andrew";
+    p1.address = @"Shirley";
+    Person* p2 = [[Person alloc] init];
+    p2.name = @"Noah";
+    p2.address = @"Buffalo";
+    NSArray* peeps = [NSArray arrayWithObjects:p2, p1, nil];
     BOOL all = [array all:^BOOL(id obj) {
         return [((NSNumber*)obj) intValue] > 0;
     }];
@@ -56,6 +81,9 @@
     NSArray* take = [array take:6];
     NSArray* takeWhile = [array takeWhile:^BOOL(id obj) {
         return [((NSNumber*)obj) intValue] < 4;
+    }];
+    NSArray* sortBy = [peeps sortBy:^id(id obj) {
+        return ((Person*)obj).address;
     }];
 }
 

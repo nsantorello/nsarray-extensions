@@ -27,7 +27,6 @@ minmax
 minmax_by   
 partition   
 reject   
+reverse   
 reverse_each   
 slice_before  
-sort   
-sort_by   

@@ -143,6 +143,19 @@
     return [[self filter:fn] autorelease];
 }
 
+-(NSArray*)sort:(NSComparisonResult(^)(id obj1, id obj2))fn
+{
+    return [[self sortedArrayUsingComparator:fn] autorelease];
+}
+
+-(NSArray*)sortBy:(id(^)(id obj))fn
+{
+    // Sort in ascending order based on compare function.
+    return [[self sort:^NSComparisonResult(id obj1, id obj2) {
+        return [fn(obj1) compare:fn(obj2)];
+    }] autorelease];
+}
+
 -(NSArray*)take:(NSUInteger)n
 {
     return [[self first:n] autorelease];
