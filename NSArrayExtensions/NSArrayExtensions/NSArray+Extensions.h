@@ -16,6 +16,7 @@
 -(NSArray*)map:(id(^)(id obj))fn;
 -(BOOL)none:(BOOL(^)(id obj))fn;
 -(BOOL)one:(BOOL(^)(id obj))fn;
+-(NSArray*)partition:(BOOL(^)(id obj))fn;
 -(id)reduce:(id) acc fn:(id(^)(id acc, id obj))fn;
 -(NSArray*)select:(BOOL(^)(id obj))fn;
 -(NSArray*)sort:(NSComparisonResult(^)(id obj1, id obj2))fn;

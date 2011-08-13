@@ -88,6 +88,9 @@
     NSArray* map = [peeps map:^id(id obj) {
         return ((Person*)obj).address;
     }];
+    NSArray* partition = [array partition:^BOOL(id obj) {
+        return [((NSNumber*)obj) intValue] <= -2;
+    }];
 }
 
 @end

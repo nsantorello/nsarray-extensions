@@ -17,14 +17,12 @@ entries
 flat_map   
 grep   
 group_by   
-include?   
 max   
 max_by   
 min   
 min_by   
 minmax   
 minmax_by   
-partition   
 reject   
 reverse   
 reverse_each   

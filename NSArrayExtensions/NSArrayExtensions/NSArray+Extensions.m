@@ -119,7 +119,7 @@
 
 -(NSArray*)map:(id(^)(id obj))fn
 {
-    __block NSMutableArray* map = [[[NSMutableArray alloc] init] autorelease];
+    __block NSMutableArray* map = [[[NSMutableArray alloc] initWithCapacity:[self count]] autorelease];
     
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         [map addObject:fn(obj)];
@@ -136,6 +136,27 @@
 -(BOOL)one:(BOOL(^)(id obj))fn
 {
     return [self count:fn] == 1;
+}
+
+-(NSArray*)partition:(BOOL(^)(id obj))fn
+{
+    __block NSMutableArray* trueVals = [[[NSMutableArray alloc] init] autorelease];
+    __block NSMutableArray* falseVals = [[[NSMutableArray alloc] init] autorelease];
+    
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (fn(obj))
+        {
+            [trueVals addObject:obj];
+        }
+        else
+        {
+            [falseVals addObject:obj];
+        }
+    }];
+    
+    NSArray* allVals = [[NSArray arrayWithObjects:trueVals, falseVals, nil] autorelease];
+    
+    return allVals;
 }
 
 -(id)reduce:(id) acc fn:(id(^)(id acc, id obj))fn
