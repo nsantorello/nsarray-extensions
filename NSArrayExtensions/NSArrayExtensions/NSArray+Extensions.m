@@ -92,13 +92,12 @@
 
 -(id)foldl:(id) acc fn:(id(^)(id acc, id obj))fn
 {
-    // TODO: (ns): there is probably a memory leak in this function.
-    __block id blockAcc = acc;
-    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        blockAcc = [fn(blockAcc, obj) retain];
-    }];
-    
-    return [blockAcc autorelease];
+    return [[self reduce:acc fn:fn] autorelease];
+}
+
+-(id)inject:(id) acc fn:(id(^)(id acc, id obj))fn
+{
+    return [[self reduce:acc fn:fn] autorelease];
 }
 
 -(BOOL)none:(BOOL(^)(id obj))fn
@@ -109,6 +108,17 @@
 -(BOOL)one:(BOOL(^)(id obj))fn
 {
     return [self count:fn] == 1;
+}
+
+-(id)reduce:(id) acc fn:(id(^)(id acc, id obj))fn
+{
+    // TODO: (ns): there is probably a memory leak in this function.
+    __block id blockAcc = acc;
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        blockAcc = [fn(blockAcc, obj) retain];
+    }];
+
+    return [blockAcc autorelease];
 }
 
 -(NSArray*)select:(BOOL(^)(id obj))fn

@@ -33,7 +33,7 @@
     BOOL one = [array one:^BOOL(id obj) {
         return [((NSNumber*)obj) intValue] == 1;
     }];
-    NSNumber* foldl = [array foldl:[NSNumber numberWithInt:0] fn:^id(id acc, id obj) {
+    NSNumber* reduce = [array reduce:[NSNumber numberWithInt:0] fn:^id(id acc, id obj) {
         return [NSNumber numberWithInt:([((NSNumber*)acc) intValue] + [((NSNumber*)obj) intValue] * [((NSNumber*)obj) intValue])];
     }];
     NSArray* filter = [array filter:^BOOL(id obj) {

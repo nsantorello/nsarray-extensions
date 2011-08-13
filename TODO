@@ -18,7 +18,6 @@ flat_map
 grep   
 group_by   
 include?   
-inject   
 map   
 max   
 max_by   
@@ -27,7 +26,6 @@ min_by
 minmax   
 minmax_by   
 partition   
-reduce   
 reject   
 reverse_each   
 slice_before  
