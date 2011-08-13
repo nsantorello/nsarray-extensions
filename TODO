@@ -3,7 +3,6 @@ Write tests
 
 chunk   
 cycle   
-drop   
 drop_while   
 each_cons   
 each_entry   

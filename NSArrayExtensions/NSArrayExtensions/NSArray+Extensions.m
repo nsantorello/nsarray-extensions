@@ -69,6 +69,20 @@
     return [[self find:fn] autorelease];
 }
 
+-(NSArray*)drop:(NSUInteger)n
+{
+    __block NSMutableArray* notDropped = [[[NSMutableArray alloc] init] autorelease];
+    
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (idx >= n)
+        {
+            [notDropped addObject:obj];
+        }
+    }];
+    
+    return notDropped;
+}
+
 -(void)each:(void(^)(id obj))fn
 {
     [self eachWithIndex:^(id obj, NSUInteger index) {

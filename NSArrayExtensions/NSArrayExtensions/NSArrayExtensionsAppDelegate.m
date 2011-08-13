@@ -94,6 +94,7 @@
     NSArray* partition = [array partition:^BOOL(id obj) {
         return [((NSNumber*)obj) intValue] <= 1;
     }];
+    NSArray* drop = [array drop:0];
 }
 
 @end
