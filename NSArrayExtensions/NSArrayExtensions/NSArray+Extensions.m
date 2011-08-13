@@ -302,6 +302,13 @@
     return [blockAcc autorelease];
 }
 
+-(NSArray*)reject:(BOOL(^)(id obj))fn
+{
+    return [[self findAll:^BOOL(id obj) {
+        return !fn(obj);
+    }] autorelease];
+}
+
 -(NSArray*)reverse
 {
     // Credit for this very elegant line of code goes to danielpunkass:

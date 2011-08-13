@@ -114,6 +114,9 @@
     }];
     id reverse = [array reverse];
     id lasts = [array last:6];
+    NSArray* reject = [array reject:^BOOL(id obj) {
+        return [((NSNumber*)obj) intValue] < 3;
+    }];
 }
 
 @end

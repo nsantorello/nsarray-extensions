@@ -36,6 +36,7 @@
 -(BOOL)one:(BOOL(^)(id obj))fn;
 -(NSArray*)partition:(BOOL(^)(id obj))fn;
 -(id)reduce:(id) acc fn:(id(^)(id acc, id obj))fn;
+-(NSArray*)reject:(BOOL(^)(id obj))fn;
 -(NSArray*)reverse;
 -(NSArray*)select:(BOOL(^)(id obj))fn;
 -(NSArray*)sort;
