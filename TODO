@@ -1,6 +1,7 @@
 Write documentation in code and on a hosted webpage
 Write unit tests
 
+Enumerable:
 chunk   
 cycle   
 drop_while   
@@ -9,3 +10,14 @@ each_entry
 each_slice   
 grep   
 slice_before  
+
+Array:
+concat
+fill
+join
+replace
+sample and sample:n
+slice/sub
+shift
+shuffle
+unshift
