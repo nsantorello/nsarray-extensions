@@ -18,6 +18,7 @@
 		D2A6491613F58B3A006921A1 /* NSArrayExtensionsTests.h in Resources */ = {isa = PBXBuildFile; fileRef = D2A6491513F58B3A006921A1 /* NSArrayExtensionsTests.h */; };
 		D2A6491813F58B3A006921A1 /* NSArrayExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A6491713F58B3A006921A1 /* NSArrayExtensionsTests.m */; };
 		D2A6492313F58B4E006921A1 /* NSArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A6492213F58B4E006921A1 /* NSArray+Extensions.m */; };
+		D2A64A8413F744EB006921A1 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A64A8313F744EB006921A1 /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		D2A6491713F58B3A006921A1 /* NSArrayExtensionsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSArrayExtensionsTests.m; sourceTree = "<group>"; };
 		D2A6492113F58B4E006921A1 /* NSArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extensions.h"; sourceTree = "<group>"; };
 		D2A6492213F58B4E006921A1 /* NSArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extensions.m"; sourceTree = "<group>"; };
+		D2A64A8213F744EB006921A1 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		D2A64A8313F744EB006921A1 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +146,8 @@
 				D2A6491513F58B3A006921A1 /* NSArrayExtensionsTests.h */,
 				D2A6491713F58B3A006921A1 /* NSArrayExtensionsTests.m */,
 				D2A6490F13F58B3A006921A1 /* Supporting Files */,
+				D2A64A8213F744EB006921A1 /* Person.h */,
+				D2A64A8313F744EB006921A1 /* Person.m */,
 			);
 			path = NSArrayExtensionsTests;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 				D2A648FB13F58B3A006921A1 /* main.m in Sources */,
 				D2A6490113F58B3A006921A1 /* NSArrayExtensionsAppDelegate.m in Sources */,
 				D2A6492313F58B4E006921A1 /* NSArray+Extensions.m in Sources */,
+				D2A64A8413F744EB006921A1 /* Person.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +456,7 @@
 				D2A6491D13F58B3A006921A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2A6491E13F58B3A006921A1 /* Build configuration list for PBXNativeTarget "NSArrayExtensionsTests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +465,7 @@
 				D2A6492013F58B3A006921A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

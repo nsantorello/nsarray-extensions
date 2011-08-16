@@ -10,8 +10,13 @@
 
 
 @interface NSArrayExtensionsTests : SenTestCase {
-@private
-    
+
 }
+
+@property (assign) NSArray* people;
+@property (assign) NSArray* numbers;
+
+@property (assign) NSArray* empty;
+@property (assign) NSArray* oneElem;
 
 @end
