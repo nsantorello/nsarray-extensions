@@ -7,8 +7,6 @@
 //
 
 #import "NSArrayExtensionsTests.h"
-#import "Person.h"
-#import <NSArray+Extensions.h>
 
 @implementation NSArrayExtensionsTests
 
@@ -25,13 +23,13 @@
     numbers = [NSArray arrayWithObjects:
                [NSNumber numberWithInt:18],
                [NSNumber numberWithInt:4],
-               [NSNumber numberWithInt:4],
+               [NSNumber numberWithInt:-4],
                [NSNumber numberWithInt:-1],
                [NSNumber numberWithInt:1],
                [NSNumber numberWithInt:2],
                [NSNumber numberWithInt:-9],
                [NSNumber numberWithInt:-4],
-               [NSNumber numberWithInt:-4],
+               [NSNumber numberWithInt:4],
                [NSNumber numberWithInt:0],
                [NSNumber numberWithInt:9],
                nil];
@@ -55,12 +53,14 @@
     fred.name = @"Fred";
     fred.age = [NSNumber numberWithInt:14];    
     
-    abby.friend = fred;
-    bob.friend = fred;
-    carl.friend = debby;
-    debby.friend = bob;
-    earl.friend = abby;
-    fred.friend = bob;
+    abby.bestFriend = fred;
+    bob.bestFriend = fred;
+    carl.bestFriend = debby;
+    debby.bestFriend = bob;
+    earl.bestFriend = abby;
+    fred.bestFriend = bob;
+    
+    people = [NSArray arrayWithObjects:abby, bob, carl, debby, earl, fred, nil];
 }
 
 - (void)tearDown
@@ -75,7 +75,39 @@
 
 -(void)testUnique
 {
-    STAssertEquals([[NSArray alloc] init], [empty unique], @"Ensure unique of empty array is empty array", <#...#>);
+    BOOL eq;
+    
+    id unique_empty = [empty unique:^id(id obj) {
+        return obj;
+    }];
+    eq = [empty elementsEqual:unique_empty];
+    STAssertTrue(eq, @"Unique of empty array should be empty array");
+    
+    id unique_oneElem = [oneElem unique:^id(id obj) {
+        return obj;
+    }];
+    eq = [oneElem elementsEqual:unique_oneElem];
+    STAssertTrue(eq, @"Unique of single element array should be the same");
+    
+    id unique_numbers = [numbers unique:^id(id obj) {
+        return obj;
+    }];
+    eq = [unique_numbers count] == 9 && [[numbers reduce:[NSNumber numberWithBool:YES] fn:^id(id acc, id obj) {
+        return [NSNumber numberWithBool:([acc boolValue] && [unique_numbers contains:^BOOL(id obj2) {
+            return [obj isEqual:obj2];
+        }])];
+    }] boolValue];
+    STAssertTrue(eq, @"Unique test 1 with numbers: %@", unique_numbers);
+    
+    id unique_people_bestFriend = [people unique:^id(id obj) {
+        return ((Person*)obj).bestFriend.name;
+    }];
+    eq = [unique_people_bestFriend count] == 4 && [[people reduce:[NSNumber numberWithBool:YES] fn:^id(id acc, id obj) {
+        return [NSNumber numberWithBool:([acc boolValue] && [unique_people_bestFriend contains:^BOOL(id obj2) {
+            return [((Person*)obj).bestFriend.name isEqualToString:((Person*)obj2).bestFriend.name];
+        }])];
+    }] boolValue];
+    STAssertTrue(eq, @"Unique test 2 with people: %@", unique_people_bestFriend);
 }
 
 @end

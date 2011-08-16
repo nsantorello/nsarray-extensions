@@ -7,16 +7,18 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "Person.h"
+#import "NSArray+Extensions.h"
 
 
 @interface NSArrayExtensionsTests : SenTestCase {
 
 }
 
-@property (assign) NSArray* people;
-@property (assign) NSArray* numbers;
+@property (copy) NSArray* people;
+@property (copy) NSArray* numbers;
 
-@property (assign) NSArray* empty;
-@property (assign) NSArray* oneElem;
+@property (copy) NSArray* empty;
+@property (copy) NSArray* oneElem;
 
 @end

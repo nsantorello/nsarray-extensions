@@ -11,6 +11,16 @@
 
 @implementation Person
 
-@synthesize name, age, friend;
+@synthesize name, age, bestFriend;
+
+-(id)copyWithZone:(NSZone *)zone
+{
+    return self;
+}
+
+-(NSString*)description
+{
+    return [NSString stringWithFormat:@"Name: %@. Age: %@. BFF: %@.", name, age, bestFriend];
+}
 
 @end

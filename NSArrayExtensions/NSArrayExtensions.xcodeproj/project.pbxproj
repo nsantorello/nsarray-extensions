@@ -19,6 +19,7 @@
 		D2A6491813F58B3A006921A1 /* NSArrayExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A6491713F58B3A006921A1 /* NSArrayExtensionsTests.m */; };
 		D2A6492313F58B4E006921A1 /* NSArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A6492213F58B4E006921A1 /* NSArray+Extensions.m */; };
 		D2A64A8413F744EB006921A1 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A64A8313F744EB006921A1 /* Person.m */; };
+		D2A64AFA13FAF3B9006921A1 /* NSArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A64AF913FAF3B9006921A1 /* NSArray+Extensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		D2A6492213F58B4E006921A1 /* NSArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extensions.m"; sourceTree = "<group>"; };
 		D2A64A8213F744EB006921A1 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		D2A64A8313F744EB006921A1 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		D2A64AF813FAF3B9006921A1 /* NSArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Extensions.h"; path = "NSArrayExtensions/NSArray+Extensions.h"; sourceTree = SOURCE_ROOT; };
+		D2A64AF913FAF3B9006921A1 /* NSArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Extensions.m"; path = "NSArrayExtensions/NSArray+Extensions.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,10 +123,10 @@
 			children = (
 				D2A648FF13F58B3A006921A1 /* NSArrayExtensionsAppDelegate.h */,
 				D2A6490013F58B3A006921A1 /* NSArrayExtensionsAppDelegate.m */,
-				D2A6490213F58B3A006921A1 /* MainMenu.xib */,
-				D2A648F413F58B3A006921A1 /* Supporting Files */,
 				D2A6492113F58B4E006921A1 /* NSArray+Extensions.h */,
 				D2A6492213F58B4E006921A1 /* NSArray+Extensions.m */,
+				D2A6490213F58B3A006921A1 /* MainMenu.xib */,
+				D2A648F413F58B3A006921A1 /* Supporting Files */,
 			);
 			path = NSArrayExtensions;
 			sourceTree = "<group>";
@@ -143,6 +146,8 @@
 		D2A6490E13F58B3A006921A1 /* NSArrayExtensionsTests */ = {
 			isa = PBXGroup;
 			children = (
+				D2A64AF813FAF3B9006921A1 /* NSArray+Extensions.h */,
+				D2A64AF913FAF3B9006921A1 /* NSArray+Extensions.m */,
 				D2A6491513F58B3A006921A1 /* NSArrayExtensionsTests.h */,
 				D2A6491713F58B3A006921A1 /* NSArrayExtensionsTests.m */,
 				D2A6490F13F58B3A006921A1 /* Supporting Files */,
@@ -282,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2A6491813F58B3A006921A1 /* NSArrayExtensionsTests.m in Sources */,
+				D2A64AFA13FAF3B9006921A1 /* NSArray+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "NSArray+Extensions.h"
 
 @interface NSArrayExtensionsAppDelegate : NSObject <NSApplicationDelegate> {
 @private

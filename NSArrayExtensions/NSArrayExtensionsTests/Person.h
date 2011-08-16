@@ -9,12 +9,14 @@
 #import <Foundation/Foundation.h>
 
 
-@interface Person : NSObject {
+@interface Person : NSObject<NSCopying> {
     
 }
 
 @property (copy) NSString* name;
 @property (copy) NSNumber* age;
-@property (assign) Person* friend;
+@property (assign) Person* bestFriend;
+
+-(id)copyWithZone:(NSZone *)zone;
 
 @end

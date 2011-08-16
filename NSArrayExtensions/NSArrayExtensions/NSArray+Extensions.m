@@ -103,6 +103,20 @@
     }];
 }
 
+-(BOOL)elementsEqual:(NSArray*)array
+{
+    __block BOOL deepEquals = [self count] == [array count];
+    
+    if (deepEquals)
+    {
+        [self eachWithIndex:^(id obj, NSUInteger index) {
+            deepEquals = deepEquals && [obj isEqual:[array objectAtIndex:index]];
+        }];
+    }
+    
+    return deepEquals;
+}
+
 -(NSArray*)filter:(BOOL(^)(id obj))fn
 {
     return [[self filter:fn stopOnFind:NO] autorelease];

@@ -11,6 +11,7 @@
 -(NSArray*)drop:(NSUInteger)n;
 -(void)each:(void(^)(id obj))fn;
 -(void)eachWithIndex:(void(^)(id obj, NSUInteger index))fn;
+-(BOOL)elementsEqual:(NSArray*)array;
 -(NSArray*)filter:(BOOL(^)(id obj))fn;
 -(id)find:(BOOL(^)(id obj))fn;
 -(NSArray*)findAll:(BOOL(^)(id obj))fn;
