@@ -61,6 +61,13 @@
     fred.bestFriend = bob;
     
     people = [NSArray arrayWithObjects:abby, bob, carl, debby, earl, fred, nil];
+    
+    [abby release];
+    [bob release];
+    [carl release];
+    [debby release];
+    [earl release];
+    [fred release];
 }
 
 - (void)tearDown

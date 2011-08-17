@@ -20,7 +20,7 @@
 
 -(NSString*)description
 {
-    return [NSString stringWithFormat:@"Name: %@. Age: %@. BFF: %@.", name, age, bestFriend];
+    return [NSString stringWithFormat:@"Name: %@. Age: %@. BFF: %@.", name, age, bestFriend.name];
 }
 
 @end

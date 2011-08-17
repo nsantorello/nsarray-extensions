@@ -379,13 +379,13 @@
     __block NSMutableDictionary* uniques = [[[NSMutableDictionary alloc] init] autorelease];
     
     [self each:^(id obj) {
-        if ([uniques objectForKey:obj] == nil)
+        if ([uniques objectForKey:fn(obj)] == nil)
         {
-            [uniques setValue:obj forKey:obj];
+            [uniques setValue:obj forKey:fn(obj)];
         }
     }];
     
-    return [uniques allKeys];
+    return [uniques allValues];
 }
 
 @end
