@@ -124,7 +124,7 @@
             return [((Person*)obj).age isEqual:((Person*)obj2).age];
         }])];
     }] boolValue];
-    STAssertTrue(eq, @"Unique test 2 with people's age: %@", unique_people_age);
+    STAssertTrue(eq, @"Unique test 3 with people's age: %@", unique_people_age);
     
     id unique_people_bestFriend = [people unique:^id(id obj) {
         return ((Person*)obj).bestFriend.name;
@@ -134,7 +134,7 @@
             return [((Person*)obj).bestFriend.name isEqualToString:((Person*)obj2).bestFriend.name];
         }])];
     }] boolValue];
-    STAssertTrue(eq, @"Unique test 2 with people's best friend: %@", unique_people_bestFriend);
+    STAssertTrue(eq, @"Unique test 4 with people's best friend: %@", unique_people_bestFriend);
 }
 
 @end
