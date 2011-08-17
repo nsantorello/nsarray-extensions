@@ -51,7 +51,7 @@
     earl.age = [NSNumber numberWithInt:51];
     Person* fred = [[Person alloc] init];
     fred.name = @"Fred";
-    fred.age = [NSNumber numberWithInt:14];    
+    fred.age = [NSNumber numberWithInt:27];    
     
     abby.bestFriend = fred;
     bob.bestFriend = fred;
@@ -106,6 +106,26 @@
     }] boolValue];
     STAssertTrue(eq, @"Unique test 1 with numbers: %@", unique_numbers);
     
+    id unique_people = [people unique:^id(id obj) {
+        return ((Person*)obj).name;
+    }];
+    eq = [unique_people count] == 6 && [[people reduce:[NSNumber numberWithBool:YES] fn:^id(id acc, id obj) {
+        return [NSNumber numberWithBool:([acc boolValue] && [unique_people contains:^BOOL(id obj2) {
+            return [((Person*)obj).name isEqualToString:((Person*)obj2).name];
+        }])];
+    }] boolValue];
+    STAssertTrue(eq, @"Unique test 2 with people's name: %@", unique_people);
+    
+    id unique_people_age = [people unique:^id(id obj) {
+        return ((Person*)obj).age;
+    }];
+    eq = [unique_people_age count] == 5 && [[people reduce:[NSNumber numberWithBool:YES] fn:^id(id acc, id obj) {
+        return [NSNumber numberWithBool:([acc boolValue] && [unique_people_age contains:^BOOL(id obj2) {
+            return [((Person*)obj).age isEqual:((Person*)obj2).age];
+        }])];
+    }] boolValue];
+    STAssertTrue(eq, @"Unique test 2 with people's age: %@", unique_people_age);
+    
     id unique_people_bestFriend = [people unique:^id(id obj) {
         return ((Person*)obj).bestFriend.name;
     }];
@@ -114,7 +134,7 @@
             return [((Person*)obj).bestFriend.name isEqualToString:((Person*)obj2).bestFriend.name];
         }])];
     }] boolValue];
-    STAssertTrue(eq, @"Unique test 2 with people: %@", unique_people_bestFriend);
+    STAssertTrue(eq, @"Unique test 2 with people's best friend: %@", unique_people_bestFriend);
 }
 
 @end
