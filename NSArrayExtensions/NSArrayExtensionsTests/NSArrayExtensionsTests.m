@@ -23,8 +23,8 @@
     oneElem = [NSArray arrayWithObject:[NSNumber numberWithInt:8]];
     
     numbers = [NSArray arrayWithObjects:
-               [NSNumber numberWithInt:18],
                [NSNumber numberWithInt:4],
+               [NSNumber numberWithInt:18],
                [NSNumber numberWithInt:-4],
                [NSNumber numberWithInt:-1],
                [NSNumber numberWithInt:1],
@@ -147,6 +147,36 @@
     }];
     STAssertFalse(any, @"false since no best friend named \"Carl\"");
 }
+
+#pragma mark - first
+
+-(void)testFirstEmpty
+{
+    id first = [empty first];
+    STAssertNil(first, @"nil for first of empty array");
+}
+
+-(void)testFirstOneElem
+{
+    NSNumber* first = [oneElem first];
+    BOOL eq = [first intValue] == 8;
+    STAssertTrue(eq, @"true for first of [8] is 8");
+}
+
+-(void)testFirstNumbers
+{
+    NSNumber* first = [numbers first];
+    BOOL eq = [first intValue] == 4;
+    STAssertTrue(eq, @"true that first of test numbers array is 4");
+}
+
+-(void)testFirstPeople
+{
+    Person* first = [people first];
+    BOOL eq = [first.name isEqualToString:@"Abby"];
+    STAssertTrue(eq, @"true that first of people array is Abby");
+}
+
 
 #pragma mark - max
 
