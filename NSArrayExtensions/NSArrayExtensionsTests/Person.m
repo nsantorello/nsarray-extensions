@@ -23,4 +23,9 @@
     return [NSString stringWithFormat:@"Name: %@. Age: %@. BFF: %@.", name, age, bestFriend.name];
 }
 
+-(NSComparisonResult)compare:(id)object
+{
+    return [name compare:((Person*)object).name];
+}
+
 @end

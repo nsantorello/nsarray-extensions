@@ -82,7 +82,101 @@
     [super tearDown];
 }
 
-#pragma mark - unique:fn
+#pragma mark - any:
+
+-(void)testAnyEmpty
+{
+    BOOL any = [empty any:^BOOL(id obj) {
+        return YES;
+    }];
+    STAssertFalse(any, @"always return false for empty arrays");
+    any = [empty any:^BOOL(id obj) {
+        return NO;
+    }];
+    STAssertFalse(any, @"always return false for empty arrays (2)");
+}
+
+-(void)testAnyOneElem
+{
+    BOOL any = [oneElem any:^BOOL(id obj) {
+        return [((NSNumber*)obj) intValue] == 8;
+    }];
+    STAssertTrue(any, @"true for 8 == 8");
+    any = [oneElem any:^BOOL(id obj) {
+        return [((NSNumber*)obj) intValue] == 7;
+    }];
+    STAssertFalse(any, @"false for 7 == 8");
+}
+
+-(void)testAnyNumbers
+{
+    BOOL any = [numbers any:^BOOL(id obj) {
+        return [((NSNumber*)obj) intValue] == 9;
+    }];
+    STAssertTrue(any, @"true for the 9 in array");
+    any = [numbers any:^BOOL(id obj) {
+        return [((NSNumber*)obj) intValue] == 8;
+    }];
+    STAssertFalse(any, @"false since no 8's in array");
+}
+
+-(void)testAnyPeople
+{
+    BOOL any = [people any:^BOOL(id obj) {
+        return [((Person*)obj).name isEqualToString:@"Fred"];
+    }];
+    STAssertTrue(any, @"true for \"Fred\" being a name in array");
+    any = [people any:^BOOL(id obj) {
+        return [((Person*)obj).name isEqualToString:@"Gary"];
+    }];
+    STAssertFalse(any, @"false since no \"Gary\" in array");
+    any = [people any:^BOOL(id obj) {
+        return [((Person*)obj).age intValue] == 27;
+    }];
+    STAssertTrue(any, @"true for age of 27");
+    any = [people any:^BOOL(id obj) {
+        return [((Person*)obj).age intValue] == 26;
+    }];
+    STAssertFalse(any, @"false since no 26");
+    any = [people any:^BOOL(id obj) {
+        return [((Person*)obj).bestFriend.name isEqualToString:@"Fred"];
+    }];
+    STAssertTrue(any, @"true for \"Fred\" being a best friend's name");
+    any = [people any:^BOOL(id obj) {
+        return [((Person*)obj).bestFriend.name isEqualToString:@"Carl"];
+    }];
+    STAssertFalse(any, @"false since no best friend named \"Carl\"");
+}
+
+#pragma mark - min
+-(void)testMinEmpty
+{
+    id min = [empty min];
+    STAssertNil(min, @"true for min of empty array");
+}
+
+-(void)testMinOneElem
+{
+    NSNumber* min = [oneElem min];
+    BOOL eq = [min intValue] == 8;
+    STAssertTrue(eq, @"true for min of [8] is 8");
+}
+
+-(void)testMinNumbers
+{
+    NSNumber* min = [numbers min];
+    BOOL eq = [min intValue] == -9;
+    STAssertTrue(eq, @"true that min of test numbers array is -9");
+}
+
+-(void)testMinPeople
+{
+    Person* min = [people min];
+    BOOL eq = [min.name isEqualToString:@"Abby"];
+    STAssertTrue(eq, @"true that min properly uses compare: to compare two custom objects");
+}
+
+#pragma mark - unique:
 
 -(void)testUniqueEmpty
 {
@@ -90,7 +184,7 @@
         return obj;
     }];
     BOOL eq = [empty elementsEqual:unique_empty];
-    STAssertTrue(eq, @"Unique of empty array should be empty array");
+    STAssertTrue(eq, @"true for empty array");
 }
 
 -(void)testUniqueOneElem
@@ -99,7 +193,7 @@
         return obj;
     }];
     BOOL eq = [oneElem elementsEqual:unique_oneElem];
-    STAssertTrue(eq, @"Unique of single element array should be the same");
+    STAssertTrue(eq, @"true for single element unique");
 }
 
 -(void)testUniqueNumbers
@@ -112,7 +206,7 @@
             return [obj isEqual:obj2];
         }])];
     }] boolValue];
-    STAssertTrue(eq, @"Unique test with numbers: %@", unique_numbers);
+    STAssertTrue(eq, @"true for unique with numbers: %@", unique_numbers);
 }
 
 -(void)testUniquePeople
@@ -125,7 +219,7 @@
             return [((Person*)obj).name isEqualToString:((Person*)obj2).name];
         }])];
     }] boolValue];
-    STAssertTrue(eq, @"Unique test with people's name: %@", unique_people);
+    STAssertTrue(eq, @"true for unique by people's name: %@", unique_people);
     
     id unique_people_age = [people unique:^id(id obj) {
         return ((Person*)obj).age;
@@ -135,7 +229,7 @@
             return [((Person*)obj).age isEqual:((Person*)obj2).age];
         }])];
     }] boolValue];
-    STAssertTrue(eq, @"Unique test with people's age: %@", unique_people_age);
+    STAssertTrue(eq, @"true for unique by people's age: %@", unique_people_age);
     
     id unique_people_bestFriend = [people unique:^id(id obj) {
         return ((Person*)obj).bestFriend.name;
@@ -145,8 +239,7 @@
             return [((Person*)obj).bestFriend.name isEqualToString:((Person*)obj2).bestFriend.name];
         }])];
     }] boolValue];
-    STAssertTrue(eq, @"Unique test with people's best friend: %@", unique_people_bestFriend);
+    STAssertTrue(eq, @"true for unique by people's best friend: %@", unique_people_bestFriend);
 }
-
 
 @end
