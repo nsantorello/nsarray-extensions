@@ -148,11 +148,41 @@
     STAssertFalse(any, @"false since no best friend named \"Carl\"");
 }
 
+#pragma mark - max
+
+-(void)testMaxEmpty
+{
+    id max = [empty max];
+    STAssertNil(max, @"nil for max of empty array");
+}
+
+-(void)testMaxOneElem
+{
+    NSNumber* max = [oneElem max];
+    BOOL eq = [max intValue] == 8;
+    STAssertTrue(eq, @"true for max of [8] is 8");
+}
+
+-(void)testMaxNumbers
+{
+    NSNumber* max = [numbers max];
+    BOOL eq = [max intValue] == 18;
+    STAssertTrue(eq, @"true that max of test numbers array is 18");
+}
+
+-(void)testMaxPeople
+{
+    Person* max = [people max];
+    BOOL eq = [max.name isEqualToString:@"Fred"];
+    STAssertTrue(eq, @"true that max properly uses compare: to compare two custom objects");
+}
+
 #pragma mark - min
+
 -(void)testMinEmpty
 {
     id min = [empty min];
-    STAssertNil(min, @"true for min of empty array");
+    STAssertNil(min, @"nil for min of empty array");
 }
 
 -(void)testMinOneElem
