@@ -148,6 +148,72 @@
     STAssertFalse(any, @"false since no best friend named \"Carl\"");
 }
 
+#pragma mark - any:
+
+-(void)testAllEmpty
+{
+    BOOL all = [empty all:^BOOL(id obj) {
+        return YES;
+    }];
+    STAssertTrue(all, @"always return true for empty arrays");
+    all = [empty all:^BOOL(id obj) {
+        return NO;
+    }];
+    STAssertTrue(all, @"always return true for empty arrays (2)");
+}
+
+-(void)testAllOneElem
+{
+    BOOL all = [oneElem all:^BOOL(id obj) {
+        return [((NSNumber*)obj) intValue] > 7;
+    }];
+    STAssertTrue(all, @"true for 8 > 7");
+    all = [oneElem all:^BOOL(id obj) {
+        return [((NSNumber*)obj) intValue] > 8;
+    }];
+    STAssertFalse(all, @"false since 8 > 8 is false");
+}
+
+-(void)testAllNumbers
+{
+    BOOL all = [numbers all:^BOOL(id obj) {
+        return [((NSNumber*)obj) intValue] > -20;
+    }];
+    STAssertTrue(all, @"true for 8 > 7");
+    all = [numbers all:^BOOL(id obj) {
+        return [((NSNumber*)obj) intValue] > 0;
+    }];
+    STAssertFalse(all, @"false since 8 > 8 is false");
+}
+
+-(void)testAllPeople
+{
+    BOOL all = [people all:^BOOL(id obj) {
+        return [((Person*)obj).name length] >= 3;
+    }];
+    STAssertTrue(all, @"true since shortest name is \"Bob\"");
+    all = [people all:^BOOL(id obj) {
+        return [((Person*)obj).name length] > 3;
+    }];
+    STAssertFalse(all, @"false since shortest name is \"Bob\" and 3 isn't > 3");
+    all = [people all:^BOOL(id obj) {
+        return [((Person*)obj).age intValue] > 20;
+    }];
+    STAssertTrue(all, @"true since min age is 22 and 22 > 20");
+    all = [people all:^BOOL(id obj) {
+        return [((Person*)obj).age intValue] > 26;
+    }];
+    STAssertFalse(all, @"false since min age is 22 and 22 isn't > 26");
+    all = [people all:^BOOL(id obj) {
+        return [((Person*)obj).bestFriend.name length] >= 3;
+    }];
+    STAssertTrue(all, @"true since \"Bob\" is a best friend's name");
+    all = [people all:^BOOL(id obj) {
+        return [((Person*)obj).bestFriend.name length] > 3;
+    }];
+    STAssertFalse(all, @"false since \"Bob\" is a best friend's name and 3 isn't > 3");
+}
+
 #pragma mark - first
 
 -(void)testFirstEmpty
