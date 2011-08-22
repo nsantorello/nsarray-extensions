@@ -135,7 +135,7 @@
  *     => false
  *
  * Returns true if each element in another array is equal to the element in this array at the same 
- * index (using isEqual: for equality) and both arrays are the same length.
+ * index (using isEqual: for equality) and both arrays are the same length; false otherwise.
  */
 -(BOOL)elementsEqual:(NSArray*)array;
 
