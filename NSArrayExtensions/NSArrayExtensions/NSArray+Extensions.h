@@ -115,21 +115,81 @@
  * Examples
  * 
  *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
- *   [myarray find:^BOOL(id obj) { return [obj intValue] > 3; }]
+ *   [myarray findIndex:^BOOL(id obj) { return [obj intValue] > 3; }]
  *     => 3
  *
- *   [myarray find:^BOOL(id obj) { return [obj intValue] == 6; }]
+ *   [myarray findIndex:^BOOL(id obj) { return [obj intValue] == 6; }]
  *     => -1
  *
  * Returns the index of the first element for which fn(obj) == true.  If array is empty or fn(obj) == false for all objects, returns -1.
  */
 -(NSInteger)findIndex:(BOOL(^)(id obj))fn;
+
+/* Gets the first element in the array.
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray first]
+ *     => 1
+ *
+ * Returns the first element in the array.  If the array is empty, returns nil.
+ */
 -(id)first;
+
+/* Gets the first n elements in the array.
+ * 
+ * n - number of elements to get
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray first:0]
+ *     => []
+ *   [myarray first:2]
+ *     => [1, 2]
+ *   [myarray first:4]
+ *     => [1, 2, 3, 4]
+ *
+ * Returns the first n elements in the array.  If the array is empty, returns [].
+ */
 -(NSArray*)first:(NSUInteger)n;
+
+/* Alias for reduce. */
 -(id)foldl:(id) acc fn:(id(^)(id acc, id obj))fn;
+
 -(NSDictionary*)groupBy:(id(^)(id obj))fn;
+
 -(id)inject:(id) acc fn:(id(^)(id acc, id obj))fn;
+
+/* Gets the last element in the array.
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray last]
+ *     => 5
+ *
+ * Returns the last element in the array.  If the array is empty, returns nil.
+ */
 -(id)last;
+
+/* Gets the last n elements in the array.
+ * 
+ * n - number of elements to get
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray last:0]
+ *     => []
+ *   [myarray last:2]
+ *     => [4, 5]
+ *   [myarray last:4]
+ *     => [2, 3, 4, 5]
+ *
+ * Returns the last n elements in the array.  If the array is empty, returns [].
+ */
 -(NSArray*)last:(NSUInteger)n;
 -(NSArray*)map:(id(^)(id obj))fn;
 -(id)max;
