@@ -272,6 +272,7 @@
  *   myarray = ["boat", "dog", "apple", "carton"];
  *   [myarray sortBy:^id(id obj) { return [NSString stringWithCharacters:[obj characterAtIndex:0] length:1]; }] // Base sort order on first character of each string
  *     => ["apple", "boat", "carton", "dog"]
+ *
  *   [myarray sortBy:^id(id obj) { return [NSNumber numberWithInt:[obj length]]; }] // Base sort order on length of each string
  *     => ["dog", "boat", "apple", "carton"]
  *
@@ -279,9 +280,28 @@
  */
 -(NSArray*)sortBy:(id(^)(id obj))fn;
 
-
+/* Alias for first: */
 -(NSArray*)take:(NSUInteger)n;
 
+/* Evaluates a function for each element of the array until the function returns false.  Then returns all prior elements.
+ * 
+ * fn - condition to evaluate for each element
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray takeWhile:^BOOL(id obj) { return [obj intValue] == 6; }]
+ *     => []
+ *
+ *   [myarray takeWhile:^BOOL(id obj) { return [obj intValue] != 4; }]
+ *     => [1, 2, 3]
+ *
+ *   [myarray takeWhile:^BOOL(id obj) { return [obj intValue] > 0; }]
+ *     => [1, 2, 3, 4, 5]
+ *   
+ *
+ * Returns a new array containing the elements for which fn(obj) == true before the first time that fn(obj) == false.  If array is empty, returns [].
+ */
 -(NSArray*)takeWhile:(BOOL(^)(id obj))fn;
 
 /* Gets an array without duplicates based on the value of a function applied to each element.
@@ -299,6 +319,7 @@
  *   myarray = ["apple", "aardvark", "box", "cat", "carton", "dog", "dj", "dig"];
  *   [myarray unique:^id(id obj) { return [NSString stringWithCharacters:[obj characterAtIndex:0] length:1]; }] // Base uniqueness on first character of each string
  *     => ["apple", "box", "cat", "dog"]
+ *
  *   [myarray unique:^id(id obj) { return [NSNumber numberWithInt:[obj length]]; }] // Base uniqueness on length of each string
  *     => ["apple", "aardvark", "box", "carton", "dj"]
  *
