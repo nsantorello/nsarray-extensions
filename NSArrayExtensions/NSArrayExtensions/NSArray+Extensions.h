@@ -59,15 +59,21 @@
  * Returns how the number of objects in the array for which fn(obj) == true.  If array is empty, returns 0.
  */
 -(NSUInteger)count:(BOOL(^)(id obj))fn;
+
+/* Alias for find. */
 -(id)detect:(BOOL(^)(id obj))fn;
+
 -(NSArray*)drop:(NSUInteger)n;
+
 -(void)each:(void(^)(id obj))fn;
+
 -(void)eachWithIndex:(void(^)(id obj, NSUInteger index))fn;
+
 -(BOOL)elementsEqual:(NSArray*)array;
 
-/* Returns a new array with only elements that satisfy a given condition.
+/* Gets a new array with only elements that satisfy a given condition.
  * 
- * fn - block to evaluate for each element.  
+ * fn - block condition to evaluate for each element.  
  *
  * Examples
  * 
@@ -81,8 +87,42 @@
  * Returns a new array containing every object for which fn(obj) == true.  If array is empty, returns [].
  */
 -(NSArray*)filter:(BOOL(^)(id obj))fn;
+
+/* Gets the first element in the array that satisfies a condition.
+ * 
+ * fn - block condition to evaluate for each element.  
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray find:^BOOL(id obj) { return [obj intValue] > 3; }]
+ *     => 4
+ *
+ *   [myarray find:^BOOL(id obj) { return [obj intValue] == 6; }]
+ *     => nil
+ *
+ * Returns the first element for which fn(obj) == true.  If array is empty or fn(obj) == false for all objects, returns nil.
+ */
 -(id)find:(BOOL(^)(id obj))fn;
+
+/* Alias for filter. */
 -(NSArray*)findAll:(BOOL(^)(id obj))fn;
+
+/* Gets the index of first element in the array that satisfies a condition.
+ * 
+ * fn - block condition to evaluate for each element.  
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray find:^BOOL(id obj) { return [obj intValue] > 3; }]
+ *     => 3
+ *
+ *   [myarray find:^BOOL(id obj) { return [obj intValue] == 6; }]
+ *     => -1
+ *
+ * Returns the index of the first element for which fn(obj) == true.  If array is empty or fn(obj) == false for all objects, returns -1.
+ */
 -(NSInteger)findIndex:(BOOL(^)(id obj))fn;
 -(id)first;
 -(NSArray*)first:(NSUInteger)n;
