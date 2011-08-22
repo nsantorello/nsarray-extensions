@@ -269,6 +269,27 @@
  */
 -(BOOL)one:(BOOL(^)(id obj))fn;
 
+/* Groups each element in the array into one of two buckets based on whether a function applied it returns true or false.
+ * 
+ * fn - condition to evaluate for each element
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray partition:^id(id obj) { return [obj intValue] % 2 == 0; }]
+ *     => [[2, 4], [1, 3, 5]]
+ *   
+ *   myarray = ["apple", "aardvark", "box", "cat", "carton", "dog", "dj", "dig"];
+ *   [myarray partition:^id(id obj) { return [obj characterAtIndex:0] == 'c'; }]
+ *     => [["cat", "carton"], ["apple", "aardvark", "box", "dog", "dj", "dig"]]
+ *
+ *   [myarray partition:^id(id obj) { return [obj length] == 3; }] // Base uniqueness on length of each string
+ *     => [["box", "cat", "dog", "dig"], ["apple", "aardvark", "carton", "dj"]]
+ *
+ * Returns an array containing two arrays; the array at index 0 contains values for which fn(obj) == true, 
+ * and the array at index 1 contains values for which fn(obj) == false.  If array is empty, returns an 
+ * array with the inner arrays empty [[], []].
+ */
 -(NSArray*)partition:(BOOL(^)(id obj))fn;
 
 -(id)reduce:(id) acc fn:(id(^)(id acc, id obj))fn;
