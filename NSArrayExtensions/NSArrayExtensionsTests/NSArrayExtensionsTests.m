@@ -148,7 +148,7 @@
     STAssertFalse(any, @"false since no best friend named \"Carl\"");
 }
 
-#pragma mark - any:
+#pragma mark - all:
 
 -(void)testAllEmpty
 {

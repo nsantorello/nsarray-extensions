@@ -2,16 +2,84 @@
 
 @interface NSArray (Extensions)
 
+/* Checks to see if all objects in the array satisfy a condition.
+ * 
+ * fn - block condition to evaluate for each element.  
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray all:^BOOL(id obj) { return [obj intValue] > 0; }]
+ *     => true
+ *
+ *   [myarray all:^BOOL(id obj) { return [obj intValue] < 0; }]
+ *     => false
+ *   
+ *
+ * Returns true if, for every object in the array, fn(obj) == true.  If array is empty, returns true.
+ */
 -(BOOL)all:(BOOL(^)(id obj))fn;
+
+/* Alias for contains. */
 -(BOOL)any:(BOOL(^)(id obj))fn;
+
+/* Alias for map. */
 -(NSArray*)collect:(id(^)(id obj))fn;
+
+/* Checks to see if at least one object in the array satisfies a condition.
+ * 
+ * fn - block condition to evaluate for each element.  
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray contains:^BOOL(id obj) { return [obj intValue] > 0; }]
+ *     => true
+ *
+ *   [myarray contains:^BOOL(id obj) { return [obj intValue] == 6; }]
+ *     => false
+ *
+ * Returns true if, for at least one object in the array, fn(obj) == true.  If array is empty, returns false.
+ */
 -(BOOL)contains:(BOOL(^)(id obj))fn;
+
+/* Counts how many objects in the array satisty the condition.
+ * 
+ * fn - block condition to evaluate for each element.  
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray count:^BOOL(id obj) { return [obj intValue] > 0; }]
+ *     => 5
+ *
+ *   [myarray count:^BOOL(id obj) { return [obj intValue] < 2; }]
+ *     => 1
+ *
+ * Returns how the number of objects in the array for which fn(obj) == true.  If array is empty, returns 0.
+ */
 -(NSUInteger)count:(BOOL(^)(id obj))fn;
 -(id)detect:(BOOL(^)(id obj))fn;
 -(NSArray*)drop:(NSUInteger)n;
 -(void)each:(void(^)(id obj))fn;
 -(void)eachWithIndex:(void(^)(id obj, NSUInteger index))fn;
 -(BOOL)elementsEqual:(NSArray*)array;
+
+/* Returns a new array with only elements that satisfy a given condition.
+ * 
+ * fn - block to evaluate for each element.  
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray filter:^BOOL(id obj) { return [obj intValue] > 3; }]
+ *     => [4, 5]
+ *
+ *   [myarray filter:^BOOL(id obj) { return [obj intValue] == 6; }]
+ *     => []
+ *
+ * Returns a new array containing every object for which fn(obj) == true.  If array is empty, returns [].
+ */
 -(NSArray*)filter:(BOOL(^)(id obj))fn;
 -(id)find:(BOOL(^)(id obj))fn;
 -(NSArray*)findAll:(BOOL(^)(id obj))fn;
