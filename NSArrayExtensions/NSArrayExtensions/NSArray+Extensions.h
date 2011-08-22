@@ -228,6 +228,16 @@
 
 -(NSArray*)reject:(BOOL(^)(id obj))fn;
 
+/* Reverses the order of the elements in the array.
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray reverse]
+ *     => [5, 4, 3, 2, 1]
+ *
+ * Returns a new array with the elements in reverse order of the original.  If array is empty, returns [].
+ */
 -(NSArray*)reverse;
 
 /* Alias for filter. */
