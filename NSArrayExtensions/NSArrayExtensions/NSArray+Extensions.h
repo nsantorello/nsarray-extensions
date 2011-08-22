@@ -224,7 +224,7 @@
 -(NSArray*)first:(NSUInteger)n;
 
 /* Alias for reduce. */
--(id)foldl:(id) acc fn:(id(^)(id acc, id obj))fn;
+-(id)foldl:(id)acc fn:(id(^)(id acc, id obj))fn;
 
 /* Groups elements in the array based on the return value of a function applied to each element.
  * 
@@ -294,6 +294,25 @@
  */
 -(NSArray*)last:(NSUInteger)n;
 
+/* Creates a new array with the results of applying a function once for every element.
+ * 
+ * fn - function to apply to each element
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray map:^id(id obj) { return [NSNumber numberWithInt:([obj intValue] % 2)]; }]
+ *     => [0, 1, 0, 1, 0]
+ *   
+ *   myarray = ["apple", "aardvark", "box", "cat", "carton", "dog", "dj", "dig"];
+ *   [myarray map:^id(id obj) { return [NSString stringWithCharacters:[obj characterAtIndex:0] length:1]; }]
+ *     => ["a", "a", "b", "c", "c", "d", "d", "d"]
+ *
+ *   [myarray map:^id(id obj) { return [NSNumber numberWithInt:[obj length]]; }]
+ *     => [5, 8, 3, 3, 6, 3, 2, 3]
+ *
+ * Returns an array with each element being fn(obj) of the corresponding element in the original array.  If array is empty, returns [].
+ */
 -(NSArray*)map:(id(^)(id obj))fn;
 -(id)max;
 -(id)max:(NSComparisonResult(^)(id obj1, id obj2))fn;
@@ -364,7 +383,7 @@
  */
 -(NSArray*)partition:(BOOL(^)(id obj))fn;
 
--(id)reduce:(id) acc fn:(id(^)(id acc, id obj))fn;
+-(id)reduce:(id)acc fn:(id(^)(id acc, id obj))fn;
 
 -(NSArray*)reject:(BOOL(^)(id obj))fn;
 
