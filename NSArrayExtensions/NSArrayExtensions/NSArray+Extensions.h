@@ -171,8 +171,42 @@
 /* Alias for reduce. */
 -(id)foldl:(id) acc fn:(id(^)(id acc, id obj))fn;
 
+/* Groups elements in the array based on the return value of a function applied to each element.
+ * 
+ * fn - condition to evaluate for each element; MUST return an NSObject (or subclass)
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray groupBy:^id(id obj) { return [NSNumber numberWithInt:([obj intValue] % 2)]; }]
+ *     => {
+ *           0 => [2, 4]
+ *           1 => [1, 3, 5]
+ *        }
+ *   
+ *   myarray = ["apple", "aardvark", "box", "cat", "carton", "dog", "dj", "dig"];
+ *   [myarray groupBy:^id(id obj) { return [NSString stringWithCharacters:[obj characterAtIndex:0] length:1]; }] // Base uniqueness on first character of each string
+ *     => {
+ *           "a" => ["apple", "aardvark"]
+ *           "b" => ["box"]
+ *           "c" => ["cat", "carton"]
+ *           "d" => ["dog", "dj", "dig"]
+ *        }
+ *
+ *   [myarray groupBy:^id(id obj) { return [NSNumber numberWithInt:[obj length]]; }] // Base uniqueness on length of each string
+ *     => {
+ *           2 => ["dj"]
+ *           3 => ["box", "cat", "dog", "dig"]
+ *           5 => ["apple"]
+ *           6 => ["carton"]
+ *           8 => ["aardvark"];
+ *        }
+ *
+ * Returns a dictionary with keys = fn(obj) and values = obj.  If array is empty, returns {} (an empty dictionary).
+ */
 -(NSDictionary*)groupBy:(id(^)(id obj))fn;
 
+/* Alias for reduce. */
 -(id)inject:(id) acc fn:(id(^)(id acc, id obj))fn;
 
 /* Gets the last element in the array.
