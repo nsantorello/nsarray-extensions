@@ -214,6 +214,72 @@
     STAssertFalse(all, @"false since \"Bob\" is a best friend's name and 3 isn't > 3");
 }
 
+#pragma mark - contains:
+
+-(void)testContainsEmpty
+{
+    BOOL b = [empty contains:^BOOL(id obj) {
+        return YES;
+    }];
+    STAssertFalse(b, @"always return false for empty arrays");
+    b = [empty contains:^BOOL(id obj) {
+        return NO;
+    }];
+    STAssertFalse(b, @"always return false for empty arrays (2)");
+}
+
+-(void)testContainsOneElem
+{
+    BOOL b = [oneElem contains:^BOOL(id obj) {
+        return [((NSNumber*)obj) intValue] == 8;
+    }];
+    STAssertTrue(b, @"true for 8 == 8");
+    b = [oneElem contains:^BOOL(id obj) {
+        return [((NSNumber*)obj) intValue] == 7;
+    }];
+    STAssertFalse(b, @"false for 8 == 7");
+}
+
+-(void)testContainsNumbers
+{
+    BOOL b = [numbers contains:^BOOL(id obj) {
+        return [((NSNumber*)obj) intValue] == 18;
+    }];
+    STAssertTrue(b, @"true for containing 18");
+    b = [numbers contains:^BOOL(id obj) {
+        return [((NSNumber*)obj) intValue] == -18;
+    }];
+    STAssertFalse(b, @"false for containing -18");
+}
+
+-(void)testContainsPeople
+{
+    BOOL b = [people contains:^BOOL(id obj) {
+        return [((Person*)obj).name isEqualToString:@"Bob"];
+    }];
+    STAssertTrue(b, @"true for a name being 'Bob'");
+    b = [people contains:^BOOL(id obj) {
+        return [((Person*)obj).name isEqualToString:@"Sally"];
+    }];
+    STAssertFalse(b, @"false for a name being 'Sally'");
+    b = [people contains:^BOOL(id obj) {
+        return [((Person*)obj).age intValue] == 25;
+    }];
+    STAssertTrue(b, @"true for someone being 25");
+    b = [people contains:^BOOL(id obj) {
+        return [((Person*)obj).age intValue] == 26;
+    }];
+    STAssertFalse(b, @"false for someone being 26");
+    b = [people contains:^BOOL(id obj) {
+        return [((Person*)obj).bestFriend.name isEqualToString:@"Bob"];
+    }];
+    STAssertTrue(b, @"true for a best friend being 'Bob'");
+    b = [people contains:^BOOL(id obj) {
+        return [((Person*)obj).bestFriend.name isEqualToString:@"Carl"];
+    }];
+    STAssertFalse(b, @"false for a best friend being 'Carl'");
+}
+
 #pragma mark - first
 
 -(void)testFirstEmpty
