@@ -4,7 +4,7 @@
 
 /* Checks to see if all objects in the array satisfy a condition.
  * 
- * fn - block condition to evaluate for each element.  
+ * fn - condition to evaluate for each element.  
  *
  * Examples
  * 
@@ -28,7 +28,7 @@
 
 /* Checks to see if at least one object in the array satisfies a condition.
  * 
- * fn - block condition to evaluate for each element.  
+ * fn - condition to evaluate for each element.  
  *
  * Examples
  * 
@@ -45,7 +45,7 @@
 
 /* Counts how many objects in the array satisty the condition.
  * 
- * fn - block condition to evaluate for each element.  
+ * fn - condition to evaluate for each element.  
  *
  * Examples
  * 
@@ -73,7 +73,7 @@
 
 /* Gets a new array with only elements that satisfy a given condition.
  * 
- * fn - block condition to evaluate for each element.  
+ * fn - condition to evaluate for each element.  
  *
  * Examples
  * 
@@ -90,7 +90,7 @@
 
 /* Gets the first element in the array that satisfies a condition.
  * 
- * fn - block condition to evaluate for each element.  
+ * fn - condition to evaluate for each element. 
  *
  * Examples
  * 
@@ -110,7 +110,7 @@
 
 /* Gets the index of first element in the array that satisfies a condition.
  * 
- * fn - block condition to evaluate for each element.  
+ * fn - condition to evaluate for each element.  
  *
  * Examples
  * 
@@ -206,7 +206,7 @@
 
 /* Checks if exactly one object in the array satisfies a condition.
  * 
- * fn - block condition to evaluate for each element.  
+ * fn - condition to evaluate for each element.  
  *
  * Examples
  * 
@@ -244,16 +244,51 @@
  * Returns a new array with the elements sorted in ascending order according to the object's compare: implementation.  If the array is empty, returns [].
  */
 -(NSArray*)sort;
+
+/* Sorts the array using a block.
+ *
+ * fn - comparison to evaluate
+ *
+ * Examples
+ * 
+ *   myarray = [2, 4, 1, 5, 3] (of type NSNumber)
+ *   [myarray sort:^NSComparisonResult(id obj1, id obj2) { return [obj1 compare:obj2]; }]
+ *     => [1, 2, 3, 4, 5]
+ *
+ * Returns a new array with the elements sorted in ascending order according to fn(obj1, obj2).  If the array is empty, returns [].
+ */
 -(NSArray*)sort:(NSComparisonResult(^)(id obj1, id obj2))fn;
+
+/* Sorts the array based on the value of a function applied to each element.
+ *
+ * fn - condition to evaluate for each element; MUST return an NSObject (or subclass)
+ *
+ * Examples
+ * 
+ *   myarray = [2, 4, 1, 5, 3] (of type NSNumber)
+ *   [myarray sortBy:^id(id obj) { return obj; }] // Base sort order on compare: as implemented by obj's type
+ *     => [1, 2, 3, 4, 5]
+ *   
+ *   myarray = ["boat", "dog", "apple", "carton"];
+ *   [myarray sortBy:^id(id obj) { return [NSString stringWithCharacters:[obj characterAtIndex:0] length:1]; }] // Base sort order on first character of each string
+ *     => ["apple", "boat", "carton", "dog"]
+ *   [myarray sortBy:^id(id obj) { return [NSNumber numberWithInt:[obj length]]; }] // Base sort order on length of each string
+ *     => ["dog", "boat", "apple", "carton"]
+ *
+ * Returns a new array with elements sorted by the value returned from fn(obj).  If array is empty, returns [].
+ */
 -(NSArray*)sortBy:(id(^)(id obj))fn;
+
+
 -(NSArray*)take:(NSUInteger)n;
+
 -(NSArray*)takeWhile:(BOOL(^)(id obj))fn;
 
-/* Gets an array without duplicates based on the value of a given function.
+/* Gets an array without duplicates based on the value of a function applied to each element.
  * The fn parameter allows you to select what value you want to target when looking for 
  * duplication. (e.g. instead of just comparing elements with isEqual)
  * 
- * fn - block condition to evaluate for each element, and MUST return an NSObject (or subclass)
+ * fn - condition to evaluate for each element, and MUST return an NSObject (or subclass)
  *
  * Examples
  * 
@@ -264,7 +299,7 @@
  *   myarray = ["apple", "aardvark", "box", "cat", "carton", "dog", "dj", "dig"];
  *   [myarray unique:^id(id obj) { return [NSString stringWithCharacters:[obj characterAtIndex:0] length:1]; }] // Base uniqueness on first character of each string
  *     => ["apple", "box", "cat", "dog"]
- *   [myarray unique:^id(id obj) { return [NSNumber numberWithInt:[obj length]]; }] // Base uniqueness on length of each string; must create NSNumber since we need to return an id
+ *   [myarray unique:^id(id obj) { return [NSNumber numberWithInt:[obj length]]; }] // Base uniqueness on length of each string
  *     => ["apple", "aardvark", "box", "carton", "dj"]
  *
  * Returns a new array without duplicates, where duplicity is based on fn(obj).  If array is empty, returns [].
