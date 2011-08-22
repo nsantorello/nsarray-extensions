@@ -63,6 +63,19 @@
 /* Alias for find. */
 -(id)detect:(BOOL(^)(id obj))fn;
 
+/* Drops the first n elements in the array.
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray drop:0]
+ *     => [1, 2, 3, 4, 5]
+ *
+ *   [myarray drop:3]
+ *     => [4, 5]
+ *
+ * Returns a new array without the first n elements in the original array.  If the array is empty, returns [].
+ */
 -(NSArray*)drop:(NSUInteger)n;
 
 -(void)each:(void(^)(id obj))fn;
