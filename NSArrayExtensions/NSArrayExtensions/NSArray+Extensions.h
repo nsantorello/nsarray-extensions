@@ -304,6 +304,23 @@
 -(NSArray*)minMax;
 -(NSArray*)minMax:(NSComparisonResult(^)(id obj1, id obj2))fn;
 -(NSArray*)minMaxBy:(id(^)(id obj))fn;
+
+/* Checks if none of the objects in the array satisfy a condition.
+ * 
+ * fn - condition to evaluate for each element
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray none:^BOOL(id obj) { return [obj intValue] == 6; }]
+ *     => true
+ *
+ *   [myarray none:^BOOL(id obj) { return [obj intValue] == 1; }]
+ *     => false
+ *   
+ *
+ * Returns true if fn(obj) == true for no objects in the array.  If array is empty, returns true.
+ */
 -(BOOL)none:(BOOL(^)(id obj))fn;
 
 /* Checks if exactly one object in the array satisfies a condition.
@@ -332,17 +349,17 @@
  * 
  *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
  *   [myarray partition:^id(id obj) { return [obj intValue] % 2 == 0; }]
- *     => [[2, 4], [1, 3, 5]]
+ *     => [[1, 3, 5], [2, 4]]
  *   
  *   myarray = ["apple", "aardvark", "box", "cat", "carton", "dog", "dj", "dig"];
  *   [myarray partition:^id(id obj) { return [obj characterAtIndex:0] == 'c'; }]
- *     => [["cat", "carton"], ["apple", "aardvark", "box", "dog", "dj", "dig"]]
+ *     => [["apple", "aardvark", "box", "dog", "dj", "dig"], ["cat", "carton"]]
  *
  *   [myarray partition:^id(id obj) { return [obj length] == 3; }] // Base uniqueness on length of each string
- *     => [["box", "cat", "dog", "dig"], ["apple", "aardvark", "carton", "dj"]]
+ *     => [["apple", "aardvark", "carton", "dj"], ["box", "cat", "dog", "dig"]]
  *
- * Returns an array containing two arrays; the array at index 0 contains values for which fn(obj) == true, 
- * and the array at index 1 contains values for which fn(obj) == false.  If array is empty, returns an 
+ * Returns an array containing two arrays; the array at index 0 contains values for which fn(obj) == false, 
+ * and the array at index 1 contains values for which fn(obj) == true.  If array is empty, returns an 
  * array with the inner arrays empty [[], []].
  */
 -(NSArray*)partition:(BOOL(^)(id obj))fn;
