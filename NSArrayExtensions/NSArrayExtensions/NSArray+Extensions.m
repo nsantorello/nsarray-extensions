@@ -301,7 +301,7 @@
         }
     }];
     
-    NSArray* allVals = [[NSArray arrayWithObjects:trueVals, falseVals, nil] autorelease];
+    NSArray* allVals = [[NSArray arrayWithObjects:falseVals, trueVals, nil] autorelease];
     
     return allVals;
 }
