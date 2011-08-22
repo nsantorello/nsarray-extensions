@@ -114,6 +114,29 @@
  */
 -(void)eachWithIndex:(void(^)(id obj, NSUInteger index))fn;
 
+/* Checks if each element in this array is equal to each element in another array using isEqual: for equality.
+ * Additionally, arrays are only equal if they are the same length (e.g. so [1, 2] != [1, 2, 3]).
+ * 
+ * array - array to test against for equality
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   samearray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   thirdarray = [1, 2, 3] (of type NSNumber)
+ *   fourtharray = [] (of type NSNumber)
+ *   [myarray elementsEqual:samearray]
+ *     => true
+ *
+ *   [myarray elementsEqual:thirdarray]
+ *     => false
+ * 
+ *   [myarray elementsEqual:fourtharray]
+ *     => false
+ *
+ * Returns true if each element in another array is equal to the element in this array at the same 
+ * index (using isEqual: for equality) and both arrays are the same length.
+ */
 -(BOOL)elementsEqual:(NSArray*)array;
 
 /* Gets a new array with only elements that satisfy a given condition.
