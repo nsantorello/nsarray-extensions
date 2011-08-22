@@ -78,8 +78,40 @@
  */
 -(NSArray*)drop:(NSUInteger)n;
 
+/* Iterates across the elements of the array and applies a function to each of them.
+ * 
+ * fn - function to apply to each element
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray each:^void(id obj) { return NSLog(@"The number is: %@", obj); }]
+ *     => The number is: 1
+ *        The number is: 2
+ *        The number is: 3
+ *        The number is: 4
+ *        The number is: 5
+ *
+ * Returns nothing.
+ */
 -(void)each:(void(^)(id obj))fn;
 
+/* Iterates across the elements of the array and applies a function to each of them.
+ * 
+ * fn - function to apply to each element
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray each:^void(id obj, NSUInteger index) { return NSLog(@"The number at array index %i is: %@", index, obj); }]
+ *     => The number at array index 0 is: 1
+ *        The number at array index 1 is: 2
+ *        The number at array index 2 is: 3
+ *        The number at array index 3 is: 4
+ *        The number at array index 4 is: 5
+ *
+ * Returns nothing.
+ */
 -(void)eachWithIndex:(void(^)(id obj, NSUInteger index))fn;
 
 -(BOOL)elementsEqual:(NSArray*)array;
