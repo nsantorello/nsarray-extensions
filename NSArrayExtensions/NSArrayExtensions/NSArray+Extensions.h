@@ -314,14 +314,89 @@
  * Returns an array with each element being fn(obj) of the corresponding element in the original array.  If array is empty, returns [].
  */
 -(NSArray*)map:(id(^)(id obj))fn;
+
+/* Gets the max element in the array as determined by each object's compare: implementation.
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray max]
+ *     => 5
+ *
+ * Returns the max element in the array.  If the array is empty, returns nil.
+ */
 -(id)max;
+
+/* Gets the max element as determined by a block.
+ *
+ * fn - comparison to evaluate
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray max:^NSComparisonResult(id obj1, id obj2) { return [obj1 compare:obj2]; }]
+ *     => 5
+ *
+ * Returns the max element in the array as determined by fn.  If the array is empty, returns nil.
+ */
 -(id)max:(NSComparisonResult(^)(id obj1, id obj2))fn;
+
 -(id)maxBy:(id(^)(id obj))fn;
+
+/* Gets the min element in the array as determined by each object's compare: implementation.
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray min]
+ *     => 1
+ *
+ * Returns the min element in the array.  If the array is empty, returns nil.
+ */
 -(id)min;
+
+/* Gets the min element as determined by a block.
+ *
+ * fn - comparison to evaluate
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray min:^NSComparisonResult(id obj1, id obj2) { return [obj1 compare:obj2]; }]
+ *     => 1
+ *
+ * Returns the min element in the array as determined by fn.  If the array is empty, returns nil.
+ */
 -(id)min:(NSComparisonResult(^)(id obj1, id obj2))fn;
+
 -(id)minBy:(id(^)(id obj))fn;
+
+/* Gets both the min and max elements in the array as determined by each object's compare: implementation.
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray minMax]
+ *     => [1, 5]
+ *
+ * Returns a new array containing the min at index 0 and the max at index 1.  If the array is empty, returns [].
+ */
 -(NSArray*)minMax;
+
+/* Gets both the min and max elements in the array as determined by a function.
+ *
+ * fn - comparison to evaluate
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray minMax:^NSComparisonResult(id obj1, id obj2) { return [obj1 compare:obj2]; }]
+ *     => [1, 5]
+ *
+ * Returns a new array containing the min at index 0 and the max at index 1.  If the array is empty, returns [].
+ */
 -(NSArray*)minMax:(NSComparisonResult(^)(id obj1, id obj2))fn;
+
 -(NSArray*)minMaxBy:(id(^)(id obj))fn;
 
 /* Checks if none of the objects in the array satisfy a condition.
