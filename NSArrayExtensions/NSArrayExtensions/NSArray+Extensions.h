@@ -341,6 +341,25 @@
  */
 -(id)max:(NSComparisonResult(^)(id obj1, id obj2))fn;
 
+/* Gets the max element of the array based on the value of a function applied to each element.
+ *
+ * fn - condition to evaluate for each element; MUST return an NSObject (or subclass)
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray maxBy:^id(id obj) { return obj; }] // Base max on compare: as implemented by obj's type
+ *     => 5
+ *   
+ *   myarray = ["boat", "dog", "apple", "carton"];
+ *   [myarray maxBy:^id(id obj) { return [NSString stringWithCharacters:[obj characterAtIndex:0] length:1]; }] // Base max on first character of each string
+ *     => "dog"
+ *
+ *   [myarray maxBy:^id(id obj) { return [NSNumber numberWithInt:[obj length]]; }] // Base max on length of each string
+ *     => "carton"
+ *
+ * Returns the max element in the array.  If array is empty, returns nil.
+ */
 -(id)maxBy:(id(^)(id obj))fn;
 
 /* Gets the min element in the array as determined by each object's compare: implementation.
@@ -369,6 +388,25 @@
  */
 -(id)min:(NSComparisonResult(^)(id obj1, id obj2))fn;
 
+/* Gets the min element of the array based on the value of a function applied to each element.
+ *
+ * fn - condition to evaluate for each element; MUST return an NSObject (or subclass)
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray minBy:^id(id obj) { return obj; }] // Base min on compare: as implemented by obj's type
+ *     => 1
+ *   
+ *   myarray = ["boat", "dog", "apple", "carton"];
+ *   [myarray minBy:^id(id obj) { return [NSString stringWithCharacters:[obj characterAtIndex:0] length:1]; }] // Base min on first character of each string
+ *     => "apple"
+ *
+ *   [myarray minBy:^id(id obj) { return [NSNumber numberWithInt:[obj length]]; }] // Base min on length of each string
+ *     => "dog"
+ *
+ * Returns the min element in the array.  If array is empty, returns nil.
+ */
 -(id)minBy:(id(^)(id obj))fn;
 
 /* Gets both the min and max elements in the array as determined by each object's compare: implementation.
@@ -397,6 +435,25 @@
  */
 -(NSArray*)minMax:(NSComparisonResult(^)(id obj1, id obj2))fn;
 
+/* Gets the min and max elements of the array based on the value of a function applied to each element.
+ *
+ * fn - condition to evaluate for each element; MUST return an NSObject (or subclass)
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray minMaxBy:^id(id obj) { return obj; }] // Base comparison on compare: as implemented by obj's type
+ *     => [1, 5]
+ *   
+ *   myarray = ["boat", "dog", "apple", "carton"];
+ *   [myarray minMaxBy:^id(id obj) { return [NSString stringWithCharacters:[obj characterAtIndex:0] length:1]; }] // Base comparison on first character of each string
+ *     => ["apple", "dog"]
+ *
+ *   [myarray minMaxBy:^id(id obj) { return [NSNumber numberWithInt:[obj length]]; }] // Base comparison on length of each string
+ *     => ["dog", "carton"]
+ *
+ * Returns a new array containing the min at index 0 and the max at index 1.  If the array is empty, returns [].
+ */
 -(NSArray*)minMaxBy:(id(^)(id obj))fn;
 
 /* Checks if none of the objects in the array satisfy a condition.
