@@ -170,7 +170,7 @@
     return firsts;
 }
 
--(id)foldl:(id) acc fn:(id(^)(id acc, id obj))fn
+-(id)fold:(id) acc fn:(id(^)(id acc, id obj))fn
 {
     return [[self reduce:acc fn:fn] autorelease];
 }

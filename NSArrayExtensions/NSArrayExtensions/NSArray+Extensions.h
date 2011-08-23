@@ -224,7 +224,7 @@
 -(NSArray*)first:(NSUInteger)n;
 
 /* Alias for reduce. */
--(id)foldl:(id)acc fn:(id(^)(id acc, id obj))fn;
+-(id)fold:(id)acc fn:(id(^)(id acc, id obj))fn;
 
 /* Groups elements in the array based on the return value of a function applied to each element.
  * 
@@ -515,6 +515,27 @@
  */
 -(NSArray*)partition:(BOOL(^)(id obj))fn;
 
+/* Combines all elements of array by applying a function.
+ * For a more in-depth explanation of what this does see: http://en.wikipedia.org/wiki/Reduce_(higher-order_function)
+ * 
+ * acc - initial accumulator value
+ * fn - condition to evaluate for each element, and MUST return an NSObject (or subclass)
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray reduce:[NSNumber numberWithInt:0] fn:^id(id acc, id obj) { return [NSNumber numberWithInt:([obj intValue] + [acc intValue])]; }] 
+ *     => 15 
+ * 
+ *   [myarray reduce:[NSNumber numberWithInt:1] fn:^id(id acc, id obj) { return [NSNumber numberWithInt:([obj intValue] * [acc intValue])]; }] 
+ *     => 120 
+ *   
+ *   myarray = ["apple", "aardvark", "box", "cat", "carton", "dog", "dj", "dig"];
+ *   [myarray reduce:[NSNumber numberWithInt:0] fn:^id(id acc, id obj) { return [NSNumber numberWithInt:([obj length] + [acc intValue])]; }]
+ *     => 33
+ *
+ * Returns the reduction result of the array.  If array is empty, returns acc.
+ */
 -(id)reduce:(id)acc fn:(id(^)(id acc, id obj))fn;
 
 /* Gets a new array with only elements that don't satisfy a given condition.
