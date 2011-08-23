@@ -460,6 +460,24 @@
 
 -(id)reduce:(id)acc fn:(id(^)(id acc, id obj))fn;
 
+/* Gets a new array with only elements that don't satisfy a given condition.
+ * 
+ * fn - condition to evaluate for each element.  
+ *
+ * Examples
+ * 
+ *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
+ *   [myarray reject:^BOOL(id obj) { return [obj intValue] > 3; }]
+ *     => [1, 2, 3]
+ *
+ *   [myarray reject:^BOOL(id obj) { return [obj intValue] == 6; }]
+ *     => [1, 2, 3, 4, 5]
+ *
+ *   [myarray reject:^BOOL(id obj) { return [obj intValue] > 0; }]
+ *     => []
+ *
+ * Returns a new array containing every object for which fn(obj) == false.  If array is empty, returns [].
+ */
 -(NSArray*)reject:(BOOL(^)(id obj))fn;
 
 /* Reverses the order of the elements in the array.
