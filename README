@@ -1,3 +1,5 @@
-This is small category that adds Ruby-style collection operations to NSArray.  These functions are intended for convenience and have not been optimized for operating on very large collections.
+This is small category that adds Ruby-style collection operations to NSArray.  
+
+These functions are intended for convenience and have *NOT* been optimized for operating on very large collections.  There very well may be more efficient/better ways to do things--but this library is intended for superior code readability, not superior performance.
 
 Also, note that because you cannot put primitive, non-NSObjects into an NSArray, you have to be cognizant of that when working with these collection functions on object properties that are not NSObjects.
