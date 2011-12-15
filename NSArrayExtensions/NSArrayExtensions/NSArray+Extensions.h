@@ -103,7 +103,7 @@
  * Examples
  * 
  *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
- *   [myarray each:^void(id obj, NSUInteger index) { return NSLog(@"The number at array index %i is: %@", index, obj); }]
+ *   [myarray each:^void(id obj, NSUInteger index) { NSLog(@"The number at array index %i is: %@", index, obj); }]
  *     => The number at array index 0 is: 1
  *        The number at array index 1 is: 2
  *        The number at array index 2 is: 3
