@@ -85,7 +85,7 @@
  * Examples
  * 
  *   myarray = [1, 2, 3, 4, 5] (of type NSNumber)
- *   [myarray each:^void(id obj) { return NSLog(@"The number is: %@", obj); }]
+ *   [myarray each:^void(id obj) { NSLog(@"The number is: %@", obj); }]
  *     => The number is: 1
  *        The number is: 2
  *        The number is: 3
